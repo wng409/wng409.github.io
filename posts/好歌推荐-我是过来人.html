@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"&&t!=="system")t="system";var m=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;var d=t==="dark"||(t==="system"&&m&&m.matches);document.documentElement.classList.toggle("dark",!!d);document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script src="/js/theme.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>好歌推荐-我是过来人</title>
+  <link rel="stylesheet" href="/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body data-static="true">
+  <!-- 顶部导航栏 -->
+  <header>
+  <div class="container header-container">
+    <!-- 修改点 1：将 div 换成 a 标签，加上 href="/" -->
+    <a href="/" class="logo">
+      <i class="fas fa-code"></i>
+      <span>TechBlog</span>
+    </a>
+
+    <!-- PC 横向导航 -->
+    <nav class="pc-nav">
+      <a href="/">首页</a>
+      <a href="/posts.html">博文</a>
+      <a href="/moments.html">动态</a>
+      
+      
+      <a href="/#about">关于我</a>
+    </nav>
+
+    <div class="nav-right">
+      
+<div class="theme-switch" data-theme-switch>
+  <button class="theme-toggle" id="themeTogglePc" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <button class="search-toggle" id="searchToggle" type="button" aria-label="搜索">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="菜单">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- 全屏菜单 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <!-- 修改点 2：将移动端的 div 也换成 a 标签 -->
+      <a href="/" class="logo">
+        <i class="fas fa-code"></i>
+        <span>TechBlog</span>
+      </a>
+      <button class="menu-close" id="menuClose" type="button" aria-label="关闭">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-menu-list">
+      <li><a href="/">首页<span class="arrow">›</span></a></li>
+      <li><a href="/posts.html">博文<span class="arrow">›</span></a></li>
+      <li><a href="/moments.html">动态<span class="arrow">›</span></a></li>
+      
+      
+      <li><a href="/#about">关于我<span class="arrow">›</span></a></li>
+      <li><a href="/#contact">联系<span class="arrow">›</span></a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      
+<div class="theme-switch theme-switch--circle" data-theme-switch>
+  <button class="theme-toggle" id="themeToggleMobile" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    <span>主题</span>
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <a href="https://github.com/wng409" target="_blank" rel="noopener" class="circle-btn">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:blog2026@sina.com" class="circle-btn">
+        <i class="fas fa-envelope"></i>
+        <span>邮件</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 页面内容 -->
+  <main>
+    
+<section class="page-title" style="padding:40px 0;">
+  <div class="container">
+    <h1>好歌推荐-我是过来人</h1>
+    <div style="color:var(--hw-medium-gray); margin-top:10px;">
+      <span><i class="far fa-calendar"></i> 2026-10-16</span>
+      <span style="margin-left:20px;"><i class="far fa-user"></i> admin</span>
+      
+        <span style="margin-left:20px;"><i class="fas fa-tags"></i> Music</span>
+      
+    </div>
+  </div>
+</section>
+
+<section class="articles-content" style="padding-top:0;">
+  <div class="container">
+    <article class="article-item" style="padding:40px;">
+      <div class="article-body">
+        <p>这几天，一首名为《过来人》的AI歌曲刷屏了。上线一天点赞破百万，无数网友留言“想哭”“唱进心里去了”。我也被它击中了。</p>
+<h2>一首让古人“开口说话”的歌</h2>
+<p>《过来人》来自创作者喆FILM的“古人开麦”系列，是一首AI生成的“古人Rap Battle”。视频里，杜甫、苏轼、李白、诸葛亮、曹操、项羽、勾践、孙悟空等十位历史人物轮流站上麦克风，用说唱的方式唱出各自的人生。
+歌词最打动我的是这一句：</p>
+<blockquote>
+<p><strong>“我是过来人 / 一千年前揣着跟你一样的心 / 你熬的夜 / 你咽的话 / 你没赢的仗 / 我都有份”</strong>
+一千年前的古人，唱着今天我们的处境。杜甫在唱租房，苏轼在唱被发配，项羽在唱输到最后。弹幕里有人说：“原来千年前的人也在为房贷发愁”。</p>
+</blockquote>
+<h2>为什么它如此戳人？</h2>
+<p>这首歌最厉害的地方在于：<strong>它不教你怎么活，只是站在台上，陪你把这一段唱完</strong>。
+没有居高临下的说教，没有“你要坚强”“一切都会好起来”的空话。十个古人，不争高下、不拼押韵，就是把那些“搬家、被发配、被人看不起、输到最后”的经历，平平淡淡地唱出来。
+这种“陪伴感”比任何励志金句都更有力量。因为真正的过来人知道：困境中的人最需要的不是答案，而是**“我懂”**。</p>
+<h2>另一首《过来人》，同样值得听</h2>
+<p>如果你喜欢这个主题，我还想推荐Hush的《过来人》。这首歌的灵感来自Hush父亲的一句话：</p>
+<blockquote>
+<p><strong>“一天有24小时，你要每天数着日子还是过着人生。”</strong>
+歌词里那句 <strong>“我啊，也不算过来人 / 只是多了一些碰撞的伤痕”</strong> ，和AI版《过来人》形成了奇妙的呼应。一个用古人的口吻说“我懂你”，一个用谦卑的姿态说“我也还在路上”。两首歌都在告诉我们：<strong>没有谁真正“过来”了，我们都是带着伤痕往前走的人。</strong></p>
+</blockquote>
+<h2>写在最后</h2>
+<h2>AI能精准计算情绪频率，但真正击中泪点的，是我们自己的生命体验与投射。
+《过来人》让我想起一句话：<strong>“生活给了我一次重新出发的机会”</strong>。无论你正在经历什么——加班、失恋、迷茫、被否定——听听这首歌吧。
+一千年前的人，和你揣着一样的心。
+<strong>你不是一个人。</strong></h2>
+<p><em>推荐收听：喆FILM《过来人》（古人开麦特别篇）、Hush《过来人》</em></p>
+
+      </div>
+      
+        <div style="margin:30px 0; position:relative; padding-bottom:56.25%; height:0;">
+          <iframe src="https://player.bilibili.com/player.html?bvid=BV1VDJm6VE7w" style="position:absolute; top:0; left:0; width:100%; height:100%;" allowfullscreen></iframe>
+        </div>
+      
+      <div class="article-footer" style="margin-top:30px; border-top:1px solid var(--hw-border); padding-top:20px;">
+        <a href="/posts.html" class="project-link"><i class="fas fa-arrow-left"></i> 返回列表</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+  </main>
+
+  <!-- 底部栏 -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>快速链接</h3>
+          <ul class="footer-links">
+            <li><a href="/">首页</a></li>
+            <li><a href="/posts.html">博文</a></li>
+            <li><a href="/moments.html">动态</a></li>
+            
+            <li><a href="/#about">关于我</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>联系我</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> blog2026@sina.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> 中国</li>
+          </ul>
+          <div class="social-links">
+            <a href="https://github.com/wng409" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025-present TechBlog. All rights reserved.
+          
+            <span class="powered-by"> | Powered by <a href="https://github.com/wng409/myblog-core" target="_blank" rel="noopener">myblog-core</a></span>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

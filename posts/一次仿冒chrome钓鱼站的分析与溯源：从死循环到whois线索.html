@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"&&t!=="system")t="system";var m=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;var d=t==="dark"||(t==="system"&&m&&m.matches);document.documentElement.classList.toggle("dark",!!d);document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script src="/js/theme.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一次仿冒Chrome钓鱼站的分析与溯源：从死循环到Whois线索</title>
+  <link rel="stylesheet" href="/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body data-static="true">
+  <!-- 顶部导航栏 -->
+  <header>
+  <div class="container header-container">
+    <!-- 修改点 1：将 div 换成 a 标签，加上 href="/" -->
+    <a href="/" class="logo">
+      <i class="fas fa-code"></i>
+      <span>TechBlog</span>
+    </a>
+
+    <!-- PC 横向导航 -->
+    <nav class="pc-nav">
+      <a href="/">首页</a>
+      <a href="/posts.html">博文</a>
+      <a href="/moments.html">动态</a>
+      
+      
+      <a href="/#about">关于我</a>
+    </nav>
+
+    <div class="nav-right">
+      
+<div class="theme-switch" data-theme-switch>
+  <button class="theme-toggle" id="themeTogglePc" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <button class="search-toggle" id="searchToggle" type="button" aria-label="搜索">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="菜单">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- 全屏菜单 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <!-- 修改点 2：将移动端的 div 也换成 a 标签 -->
+      <a href="/" class="logo">
+        <i class="fas fa-code"></i>
+        <span>TechBlog</span>
+      </a>
+      <button class="menu-close" id="menuClose" type="button" aria-label="关闭">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-menu-list">
+      <li><a href="/">首页<span class="arrow">›</span></a></li>
+      <li><a href="/posts.html">博文<span class="arrow">›</span></a></li>
+      <li><a href="/moments.html">动态<span class="arrow">›</span></a></li>
+      
+      
+      <li><a href="/#about">关于我<span class="arrow">›</span></a></li>
+      <li><a href="/#contact">联系<span class="arrow">›</span></a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      
+<div class="theme-switch theme-switch--circle" data-theme-switch>
+  <button class="theme-toggle" id="themeToggleMobile" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    <span>主题</span>
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <a href="https://github.com/wng409" target="_blank" rel="noopener" class="circle-btn">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:blog2026@sina.com" class="circle-btn">
+        <i class="fas fa-envelope"></i>
+        <span>邮件</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 页面内容 -->
+  <main>
+    
+<section class="page-title" style="padding:40px 0;">
+  <div class="container">
+    <h1>一次仿冒Chrome钓鱼站的分析与溯源：从死循环到Whois线索</h1>
+    <div style="color:var(--hw-medium-gray); margin-top:10px;">
+      <span><i class="far fa-calendar"></i> 2026-09-13</span>
+      <span style="margin-left:20px;"><i class="far fa-user"></i> admin</span>
+      
+        <span style="margin-left:20px;"><i class="fas fa-tags"></i> SRC</span>
+      
+    </div>
+  </div>
+</section>
+
+<section class="articles-content" style="padding-top:0;">
+  <div class="container">
+    <article class="article-item" style="padding:40px;">
+      <div class="article-body">
+        <h1>从仿冒 Chrome 钓鱼站到 Whois 溯源：一次脱敏后的安全分析记录</h1>
+<h2>前言</h2>
+<p>前几天在浏览网页时，偶然发现了一个高仿 Google Chrome 下载页面的网站：</p>
+<pre><code class="language-text">https://zh.google-google-google-cn.example.cn
+</code></pre>
+<p>域名里重复出现的 <code>google-google-google-cn</code> 和 <code>example.cn</code> 后缀立刻引起了我的注意。经过一番分析，我发现这不仅是一个简单的钓鱼站，背后还隐藏着一条完整的黑色产业链，而且这个钓鱼站本身还存在一个致命的 Bug——它把自己卡死了。</p>
+<p>这篇文章记录了整个分析过程，包括域名解析、Whois 溯源、跳转链分析以及最终发现的“死循环”现象。希望能给其他安全研究者提供一些参考。本文已对真实域名、注册人、邮箱、注册商、编号、时间等信息进行脱敏处理。</p>
+<h2>一、初步观察：域名与页面</h2>
+<p>打开链接后，页面几乎完美复刻了 Google Chrome 的官方下载页，包括 Chrome 的 Logo、版本号、下载按钮等。但仔细看域名，就会发现明显异常：</p>
+<ul>
+<li>真正的 Google 域名应该是 <code>google.com</code> 或 <code>google.cn</code>；</li>
+<li>而这个域名是 <code>zh.google-google-google-cn.example.cn</code>，其中 <code>example.cn</code> 是一个完全无关的域名，前面堆砌了多个 <code>google</code> 字样，明显是为了迷惑用户。</li>
+</ul>
+<p>我意识到，这是一个典型的仿冒品牌钓鱼站，目的是诱导用户下载捆绑了恶意软件的“Chrome 安装包”。</p>
+<h2>二、Whois 溯源：实名注册的线索</h2>
+<p>对域名 <code>google-google-google-cn.example.cn</code> 进行 Whois 查询，得到了非常关键的信息：</p>
+<pre><code class="language-text">Domain Name: google-google-google-cn.example.cn
+ROID: 已隐去
+Domain Status: ok
+Registrant: 某注册人（已脱敏）
+Registrant Contact Email: user@example.com
+Sponsoring Registrar: 某域名注册商（已脱敏）
+Name Server: ns1.example-registrar.example
+Name Server: ns2.example-registrar.example
+Registration Time: 近期某日
+Expiration Time: 约一年后
+DNSSEC: unsigned
+</code></pre>
+<p>几个关键点：</p>
+<ol>
+<li>注册信息未做隐私保护：注册人和邮箱信息可被查询到（本文已脱敏）。这在黑产中比较少见，可能是疏忽或身份冒用，但无论如何，这是一个重要的溯源线索。</li>
+<li>注册时间很近：域名注册于近期，距离我发现它仅一个月左右，说明攻击者正在积极更新基础设施。</li>
+<li>注册商可举报：我们可以向该域名注册商举报域名用于钓鱼，要求暂停解析。</li>
+<li>主域名 <code>example.cn</code>：该主域名下还有大量类似子域名，如 <code>doubao.example.cn</code>、<code>apps-google-qq.example.cn</code> 等，说明这是一个专门用于钓鱼的域名集群。</li>
+</ol>
+<h2>三、跳转链与死循环：黑产自己玩脱了</h2>
+<p>为了进一步分析，我模拟了普通用户的点击行为。点击“下载 Chrome”按钮后，页面并没有直接下载文件，而是经历了一连串跳转：</p>
+<pre><code class="language-text">仿冒页 → 下载站 → 假安全检查页 → 仿冒页 → ...
+</code></pre>
+<p>无论我如何更换网络（切换 WiFi、使用手机流量），这个循环都会稳定复现。也就是说，恶意软件分发流程卡死了。</p>
+<p>经过分析，我认为原因如下：</p>
+<ol>
+<li>代码拼凑冲突：该钓鱼站可能同时套用了电脑版、手机版等多套诈骗模板，模板之间逻辑冲突，导致跳转判断出错。</li>
+<li>风控系统误判：黑产通常会在页面中加入风控系统，试图筛选掉安全研究人员、虚拟机 IP 等。但风控逻辑可能与跳转逻辑互相干扰，造成了死锁。</li>
+<li>远程脚本不稳定：跳转依赖远程服务器返回的指令，如果服务器端脚本存在 Bug，也会导致循环。</li>
+</ol>
+<p>这个死循环对我来说是个好消息——它意味着恶意软件没有成功下发，我没有中招。但同时，这也说明该攻击系统仍然在运行，只是不稳定；未来某个时刻，某次请求可能就会突然“成功”，把木马真正下载到用户电脑上。</p>
+<h2>四、危害分析</h2>
+<p>尽管我这次没有中招，但这个钓鱼站的潜在危害依然很大：</p>
+<ul>
+<li>恶意软件分发：下载的“Chrome 安装包”很可能捆绑了远控木马、信息窃取软件或挖矿病毒。</li>
+<li>品牌仿冒：利用 Google Chrome 的知名度降低用户警惕，尤其是对普通网民来说，很难分辨域名真伪。</li>
+<li>SEO 投毒：攻击者可能通过搜索引擎优化，让这个页面出现在“Chrome 下载”等关键词的搜索结果中，扩大影响面。</li>
+<li>黑产基础设施：<code>example.cn</code> 下还有多个同类子域名，说明这是一个有组织的黑产团伙，可能同时运营着多个钓鱼项目。</li>
+</ul>
+<h2>五、合规上报与处置建议</h2>
+<p>作为安全研究者，我在分析过程中始终坚持“只观察、不交互”的原则，没有下载任何文件，也没有进行任何破坏性操作。</p>
+<p>目前，我已经整理了以下线索，准备向相关平台提交：</p>
+<ul>
+<li>域名：<code>zh.google-google-google-cn.example.cn</code></li>
+<li>Whois 信息：注册人、邮箱、注册商等（均已脱敏）</li>
+<li>异常行为：PC 端与移动端均复现“仿冒页→下载站→假安全检查页→仿冒页”的死循环</li>
+<li>潜在危害：仿冒 Chrome 分发恶意软件，且攻击框架存在不稳定特征</li>
+</ul>
+<p>提交渠道：</p>
+<ol>
+<li>国内漏洞响应平台：作为恶意 URL/信息泄露类漏洞提交，争取现金奖励。</li>
+<li>国家互联网应急中心（CNCERT）：上报钓鱼网站，协助关停。</li>
+<li>域名注册商：向该域名注册商举报，要求暂停域名解析。</li>
+<li>Google 官方：通过 Google 的钓鱼网站举报渠道提交。</li>
+</ol>
+<h2>六、个人感悟</h2>
+<p>这是我第二次独立分析网络安全事件。第一次是从某视频平台内链跳转漏洞一路追到被篡改的政府网站，那次让我学会了“溯源思维”；这一次则是从仿冒 Chrome 钓鱼站入手，学会了 Whois 查询、跳转链分析和死循环判定。</p>
+<p>虽然这个钓鱼站因为自身的 Bug 没有真正得逞，但分析过程让我对黑产的运作方式有了更直观的认识。更重要的是，我意识到：安全研究不一定要“攻破”什么，有时候，观察、记录、上报，本身就是一种力量。</p>
+<p>希望这篇文章能对刚入门的安全研究者有所帮助。如果你也发现了类似的钓鱼站，记得：不要下载任何文件，不要输入任何信息，保留证据，合规上报。</p>
+<hr>
+<p><strong>脱敏说明：</strong> 本文所有真实域名、URL、注册人姓名、邮箱、注册商、Whois 编号、时间戳等信息均已替换或隐去。文中出现的 <code>example.cn</code>、<code>example-registrar.example</code>、<code>user@example.com</code>、<code>某注册人</code> 等均为占位符，仅用于说明技术原理，不代表任何真实目标。</p>
+<p><strong>免责声明：</strong> 本文仅用于安全研究与技术交流，所有分析均在合规范围内进行，未对目标系统进行任何未授权的访问或破坏。请勿利用文中信息从事任何违法活动。</p>
+
+      </div>
+      
+      <div class="article-footer" style="margin-top:30px; border-top:1px solid var(--hw-border); padding-top:20px;">
+        <a href="/posts.html" class="project-link"><i class="fas fa-arrow-left"></i> 返回列表</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+  </main>
+
+  <!-- 底部栏 -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>快速链接</h3>
+          <ul class="footer-links">
+            <li><a href="/">首页</a></li>
+            <li><a href="/posts.html">博文</a></li>
+            <li><a href="/moments.html">动态</a></li>
+            
+            <li><a href="/#about">关于我</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>联系我</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> blog2026@sina.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> 中国</li>
+          </ul>
+          <div class="social-links">
+            <a href="https://github.com/wng409" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025-present TechBlog. All rights reserved.
+          
+            <span class="powered-by"> | Powered by <a href="https://github.com/wng409/myblog-core" target="_blank" rel="noopener">myblog-core</a></span>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
