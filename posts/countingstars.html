@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"&&t!=="system")t="system";var m=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;var d=t==="dark"||(t==="system"&&m&&m.matches);document.documentElement.classList.toggle("dark",!!d);document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script src="/js/theme.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>好歌推荐-Counting Stars</title>
+  <!-- 站点主题色（后台「站点设置」可改，默认 #e60012） -->
+  <style>:root { --brand-color: #e60012 }</style>
+  <link rel="stylesheet" href="/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body class="" data-static="true">
+  <!-- 顶部导航栏 -->
+  <header>
+  <div class="container header-container">
+    <!-- 修改点 1：将 div 换成 a 标签，加上 href="/" -->
+    <a href="/" class="logo">
+      <i class="fas fa-code"></i>
+      <span>TechBlog</span>
+    </a>
+
+    <!-- PC 横向导航 -->
+    <nav class="pc-nav">
+      <a href="/">首页</a>
+      <a href="/posts.html">博文</a>
+      <a href="/moments.html">动态</a>
+      
+      
+      <a href="/#about">关于我</a>
+    </nav>
+
+    <div class="nav-right">
+      
+<div class="theme-switch" data-theme-switch>
+  <button class="theme-toggle" id="themeTogglePc" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <button class="search-toggle" id="searchToggle" type="button" aria-label="搜索">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="菜单">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- 全屏菜单 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <!-- 修改点 2：将移动端的 div 也换成 a 标签 -->
+      <a href="/" class="logo">
+        <i class="fas fa-code"></i>
+        <span>TechBlog</span>
+      </a>
+      <button class="menu-close" id="menuClose" type="button" aria-label="关闭">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-menu-list">
+      <li><a href="/">首页<span class="arrow">›</span></a></li>
+      <li><a href="/posts.html">博文<span class="arrow">›</span></a></li>
+      <li><a href="/moments.html">动态<span class="arrow">›</span></a></li>
+      
+      
+      <li><a href="/#about">关于我<span class="arrow">›</span></a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      
+<div class="theme-switch theme-switch--circle" data-theme-switch>
+  <button class="theme-toggle" id="themeToggleMobile" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    <span>主题</span>
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <a href="https://github.com/wng409" target="_blank" rel="noopener" class="circle-btn">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:blog2026@sina.com" class="circle-btn">
+        <i class="fas fa-envelope"></i>
+        <span>邮件</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 页面内容 -->
+  <main>
+    
+<section class="page-title" style="padding:40px 0;">
+  <div class="container">
+    <h1>好歌推荐-Counting Stars</h1>
+    <div style="color:var(--hw-medium-gray); margin-top:10px;">
+      <span><i class="far fa-calendar"></i> 2026-10-06</span>
+      <span style="margin-left:20px;"><i class="far fa-user"></i> admin</span>
+      
+        <span style="margin-left:20px;"><i class="fas fa-tags"></i> Music</span>
+      
+    </div>
+  </div>
+</section>
+
+<section class="articles-content" style="padding-top:0;">
+  <div class="container">
+    <article class="article-item" style="padding:40px;">
+      <div class="article-body">
+        <h1>一首被碧昂斯“退回”的歌，如何成为全球播放超40亿次的传奇</h1>
+<p>有些歌，生来就带着使命。OneRepublic的《Counting Stars》就是其中之一。今天想聊聊这首陪伴了无数人深夜的歌。
+<img src="/uploads/2026-10-06/1791279121358-g2w9ai.jpg" alt="图片"></p>
+<h2>“如果这首歌不行，我们可能就结束了”</h2>
+<p>时间回到2013年。OneRepublic已经出道七年，首张专辑里的《Apologize》让他们一夜爆红，但后续作品始终没能复制那种辉煌。主唱Ryan Tedder后来在采访中坦言，当时乐队承受着巨大压力，甚至觉得“前两支单曲都哑火了，这是我们最后的机会”。</p>
+<p>《Counting Stars》就诞生于这种背水一战的心态中。有趣的是，这首歌最初并不是为OneRepublic写的——Ryan Tedder当时正在汉普顿为<strong>碧昂丝</strong>的同名专辑创作，他在那个创作营里写下了这首歌的雏形。但碧昂丝觉得风格不太契合，婉拒了这首歌。</p>
+<p>于是，Ryan把这首“别人不要”的歌拿回了自己的乐队。他后来回忆说，自己刻意把这首歌放在了专辑《Native》的第一首，“我就是有强烈的直觉”。</p>
+<h2>数钱，还是数星星？</h2>
+<p>《Counting Stars》的歌名本身就是一个绝妙的隐喻。歌词里反复出现的核心对比，是**“counting dollars”（数钱）和“counting stars”（数星星）**之间的选择。</p>
+<p>开篇第一句就奠定了整首歌的基调：</p>
+<blockquote>
+<p>“最近我辗转反侧，夜不能寐，幻想着我们能够成为的样子。”</p>
+</blockquote>
+<p>这不是一首轻松的歌，它唱的是<strong>迷茫、失眠、对生活意义的追问</strong>。但妙就妙在，它的旋律和编曲却充满了昂扬的能量——木吉他开场的低语，突然被鼓点和贝斯推入高速运转的副歌，像极了一个人在深夜想通了一切后，决定不再内耗的那一刻。</p>
+<p>Ryan Tedder说，“以诚为本”是这首歌想要传达的信息。乐评人则把它翻译成了一句更接地气的话：<strong>“生活不止眼前的苟且，还有诗和远方”</strong>。</p>
+<h2>那个地下室和鳄鱼</h2>
+<p>《Counting Stars》的MV同样值得一说。拍摄地点选在了新奥尔良一座建于1844年的非裔美国人教堂的地下室，那是全美第二古老的同类教堂。</p>
+<p><img src="/uploads/2026-10-06/1791287303320-8qvgqt.jpg" alt="图片">
+MV的设定充满隐喻：乐队在地下室里演奏，阴暗潮湿，甚至有一条<strong>鳄鱼</strong>在脚边游荡；而地下室的上层，一群人正在进行狂热的宗教仪式，祈祷获得金钱和名利。直到最后一刻，地板破裂，一个人掉进了地下室，上层的仪式才戛然而止，所有人惊讶地俯视着楼下演奏的乐队。</p>
+<p>这个画面本身就是对歌词的视觉诠释：<strong>沉迷“数钱”的人，终会被“数星星”的真相击穿。</strong></p>
+<h2>一首歌的“登神之路”</h2>
+<p>《Counting Stars》在商业上的表现堪称恐怖。它在<strong>全球54个国家的音乐排行榜登顶</strong>，在公告牌百强单曲榜上最高冲到<strong>亚军</strong>，而且一待就是<strong>68周</strong>，最终获得美国唱片业协会<strong>钻石认证</strong>（销量超过1000万）。在英国单曲榜，它拿下了冠军。</p>
+<p>但这首歌真正的“出圈”，发生在它发行的十年之后。</p>
+<p>2024年，一个叫“燃尽的小曲”的网络梗在中国互联网上疯狂传播——正是《Counting Stars》经过加速和变调处理的版本，被大量用于搭配《明日之丈》等热血动漫的高燃片段。“燃尽”代表的是极致的热血、全力以赴、与命运抗争。一首2013年的歌，在2024年以全新的方式再次席卷中文互联网。
+<img src="/uploads/2026-10-06/1791287406503-y3a5x8.jpg" alt="图片"></p>
+<p>2025年，OneRepublic登上了<strong>央视春晚</strong>武汉分会场的舞台。在黄鹤楼前，他们唱起了这首《Counting Stars》，成为<strong>首支亮相春晚的外国乐队</strong>。网友的评价很到位：“黄鹤楼前数星星，这才是中西合璧。”
+<img src="/uploads/2026-10-06/1791279014332-zwkki4.jpg" alt="图片"></p>
+<h2>为什么这首歌能一直“活”着？</h2>
+<p>十多年过去了，每天还有无数人在 Spotify、YouTube、抖音上点开这首歌。它出现在励志视频里，出现在游戏剪辑里，出现在深夜加班的耳机里。</p>
+<p>或许是因为，<strong>每个人心里都有一场“数钱”和“数星星”的战争</strong>。现实让我们不得不低头算账，但总有些时刻，我们想抬头看看天上的星星。</p>
+<p>就像歌词里那句被无数人截图分享的话：</p>
+<blockquote>
+<p><strong>“Everything that kills me makes me feel alive.”</strong></p>
+<p><em>（那些置我于死地的东西，反而让我感觉自己活着。）</em></p>
+</blockquote>
+<p>这首歌没有给答案。它只是告诉每一个正在失眠的、迷茫的、不甘心的人：你可以继续数钱，但别忘了，星星一直在那里。</p>
+<hr>
+<h2>🎵 戴上耳机，一起数星星!</h2>
+
+      </div>
+      
+        <div style="margin:30px 0; position:relative; padding-bottom:56.25%; height:0;">
+          <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ae411r7Jy" style="position:absolute; top:0; left:0; width:100%; height:100%;" allowfullscreen></iframe>
+        </div>
+      
+      <div class="article-footer" style="margin-top:30px; border-top:1px solid var(--hw-border); padding-top:20px;">
+        <a href="/posts.html" class="project-link"><i class="fas fa-arrow-left"></i> 返回列表</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+  </main>
+
+  <!-- 底部栏 -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>快速链接</h3>
+          <ul class="footer-links">
+            <li><a href="/">首页</a></li>
+            <li><a href="/posts.html">博文</a></li>
+            <li><a href="/moments.html">动态</a></li>
+            
+            <li><a href="/#about">关于我</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>联系我</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> blog2026@sina.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> 中国</li>
+          </ul>
+          <div class="social-links">
+            <a href="https://github.com/wng409" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025-present TechBlog. All rights reserved.
+          
+            <span class="powered-by"> | Powered by <a href="https://github.com/wng409/myblog-core" target="_blank" rel="noopener">myblog-core</a></span>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

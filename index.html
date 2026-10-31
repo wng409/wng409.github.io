@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"&&t!=="system")t="system";var m=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;var d=t==="dark"||(t==="system"&&m&&m.matches);document.documentElement.classList.toggle("dark",!!d);document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script src="/js/theme.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <!-- 站点主题色（后台「站点设置」可改，默认 #e60012） -->
+  <style>:root { --brand-color: #e60012 }</style>
+  <link rel="stylesheet" href="/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body class="has-hero" data-static="true">
+  <!-- 顶部导航栏 -->
+  <header>
+  <div class="container header-container">
+    <!-- 修改点 1：将 div 换成 a 标签，加上 href="/" -->
+    <a href="/" class="logo">
+      <i class="fas fa-code"></i>
+      <span>TechBlog</span>
+    </a>
+
+    <!-- PC 横向导航 -->
+    <nav class="pc-nav">
+      <a href="/">首页</a>
+      <a href="/posts.html">博文</a>
+      <a href="/moments.html">动态</a>
+      
+      
+      <a href="/#about">关于我</a>
+    </nav>
+
+    <div class="nav-right">
+      
+<div class="theme-switch" data-theme-switch>
+  <button class="theme-toggle" id="themeTogglePc" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <button class="search-toggle" id="searchToggle" type="button" aria-label="搜索">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="菜单">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- 全屏菜单 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <!-- 修改点 2：将移动端的 div 也换成 a 标签 -->
+      <a href="/" class="logo">
+        <i class="fas fa-code"></i>
+        <span>TechBlog</span>
+      </a>
+      <button class="menu-close" id="menuClose" type="button" aria-label="关闭">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-menu-list">
+      <li><a href="/">首页<span class="arrow">›</span></a></li>
+      <li><a href="/posts.html">博文<span class="arrow">›</span></a></li>
+      <li><a href="/moments.html">动态<span class="arrow">›</span></a></li>
+      
+      
+      <li><a href="/#about">关于我<span class="arrow">›</span></a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      
+<div class="theme-switch theme-switch--circle" data-theme-switch>
+  <button class="theme-toggle" id="themeToggleMobile" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    <span>主题</span>
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <a href="https://github.com/wng409" target="_blank" rel="noopener" class="circle-btn">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:blog2026@sina.com" class="circle-btn">
+        <i class="fas fa-envelope"></i>
+        <span>邮件</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 页面内容 -->
+  <main>
+    
+
+<!-- ========== 0. 沉浸式首屏（新增；下方原有轮播/推荐/最新文章全部保留） ========== -->
+<section class="hero-cover" id="homeHero">
+  <img class="hero-media" src="/uploads/2026-10-30/1793360496456-gz4q4s.jpg" alt="" fetchpriority="high" decoding="async">
+  <!-- 主标题绝对居中 -->
+  <div class="hero-center-title" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 2;">
+    <h1 class="hero-title" style="font-size: 3rem; margin: 0;">我的博客</h1>
+  </div>
+  <!-- 副标题放在底部，向下箭头单独定位在更下方 -->
+  <div class="hero-bottom-area" style="position: absolute; bottom: 92px; left: 0; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 16px; z-index: 2;">
+    
+    
+      <p style="color: #9ca3af; font-size: 15px; letter-spacing: 2px; margin: 0;">记录一些随笔和项目</p>
+    
+  </div>
+  <i class="fas fa-chevron-down hero-arrow" aria-hidden="true"></i>
+</section>
+
+<!-- ========== 1. Banner 轮播（首屏，圆角） ========== -->
+<section class="banner-carousel">
+  <div class="carousel-wrapper">
+    <div class="carousel-track" id="carouselTrack">
+      
+        
+          <div class="carousel-slide active">
+            <a href="/posts/countingstars.html">
+              <div class="slide-image" style="background-image: url('/uploads/2026-10-16/1792155629949-cwdglk.jpg');">
+                <div class="slide-overlay">
+                  <h2>！</h2>
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="carousel-slide ">
+            <a href="#">
+              <div class="slide-image" style="background-image: url('/uploads/2026-10-02/1790948357624-z36g6z.jpg');">
+                <div class="slide-overlay">
+                  <h2>遥遥领先</h2>
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="carousel-slide ">
+            <a href="/posts/课前演讲--老人与海.html">
+              <div class="slide-image" style="background-image: url('/uploads/2026-10-31/1793416405033-hbgth9.png');">
+                <div class="slide-overlay">
+                  <h2>课前演讲--老人与海</h2>
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="carousel-slide ">
+            <a href="/posts/课前演讲--格物致知.html">
+              <div class="slide-image" style="background-image: url('/uploads/2026-10-31/1793416486337-lvns0o.jpg');">
+                <div class="slide-overlay">
+                  <h2>课前演讲--格物致知</h2>
+                </div>
+              </div>
+            </a>
+          </div>
+        
+      
+    </div>
+    <button class="carousel-btn prev" id="carouselPrev" type="button" aria-label="上一张">&#10094;</button>
+    <button class="carousel-btn next" id="carouselNext" type="button" aria-label="下一张">&#10095;</button>
+    <div class="carousel-dots">
+      
+        
+          <span class="dot active" data-index="0"></span>
+        
+          <span class="dot " data-index="1"></span>
+        
+          <span class="dot " data-index="2"></span>
+        
+          <span class="dot " data-index="3"></span>
+        
+      
+    </div>
+  </div>
+</section>
+
+<!-- ========== 2. 推荐文章 ========== -->
+<section class="section section-light" id="blog">
+  <div class="container">
+    <div class="section-title">
+      <h2>推荐文章</h2>
+      <p>精选内容，不容错过</p>
+    </div>
+    <div class="blog-grid">
+      
+        
+          <article class="blog-card">
+            <a href="/posts/课前演讲--格物致知.html">
+              <div class="card-image-wrapper">
+                <div class="card-image" style="background-image: url('/uploads/2026-10-31/1793416486337-lvns0o.jpg');"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-meta">2026-10-31 · admin</div>
+                <h3>课前演讲--格物致知</h3>
+                <span class="read-more">了解更多 <i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="blog-card">
+            <a href="/posts/课前演讲--老人与海.html">
+              <div class="card-image-wrapper">
+                <div class="card-image" style="background-image: url('/uploads/2026-10-31/1793416405033-hbgth9.png');"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-meta">2026-10-31 · admin</div>
+                <h3>课前演讲--老人与海</h3>
+                <span class="read-more">了解更多 <i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="blog-card">
+            <a href="/posts/背离与复活.html">
+              <div class="card-image-wrapper">
+                <div class="card-image" style="background-image: url('https://via.placeholder.com/800x400');"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-meta">2026-10-16 · lgdzo</div>
+                <h3>背离与复活</h3>
+                <span class="read-more">了解更多 <i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </article>
+        
+      
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. 最新文章 ========== -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-title">
+      <h2>最新文章</h2>
+      <p>近期更新</p>
+    </div>
+    <div class="blog-grid">
+      
+        
+          <article class="blog-card">
+            <a href="/posts/课前演讲--格物致知.html">
+              <div class="card-image-wrapper">
+                <div class="card-image" style="background-image: url('/uploads/2026-10-31/1793416486337-lvns0o.jpg');"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-meta">2026-10-31 · admin</div>
+                <h3>课前演讲--格物致知</h3>
+                <span class="read-more">了解更多 <i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="blog-card">
+            <a href="/posts/课前演讲--老人与海.html">
+              <div class="card-image-wrapper">
+                <div class="card-image" style="background-image: url('/uploads/2026-10-31/1793416405033-hbgth9.png');"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-meta">2026-10-31 · admin</div>
+                <h3>课前演讲--老人与海</h3>
+                <span class="read-more">了解更多 <i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="blog-card">
+            <a href="/posts/背离与复活.html">
+              <div class="card-image-wrapper">
+                <div class="card-image" style="background-image: url('https://via.placeholder.com/800x400');"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-meta">2026-10-16 · lgdzo</div>
+                <h3>背离与复活</h3>
+                <span class="read-more">了解更多 <i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="blog-card">
+            <a href="/posts/好歌推荐-我是过来人.html">
+              <div class="card-image-wrapper">
+                <div class="card-image" style="background-image: url('/uploads/2026-10-16/1792155568549-n8ho8i.jpg');"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-meta">2026-10-16 · admin</div>
+                <h3>好歌推荐-我是过来人</h3>
+                <span class="read-more">了解更多 <i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="blog-card">
+            <a href="/posts/countingstars.html">
+              <div class="card-image-wrapper">
+                <div class="card-image" style="background-image: url('/uploads/2026-10-16/1792155629949-cwdglk.jpg');"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-meta">2026-10-06 · admin</div>
+                <h3>好歌推荐-Counting Stars</h3>
+                <span class="read-more">了解更多 <i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </article>
+        
+          <article class="blog-card">
+            <a href="/posts/一次仿冒chrome钓鱼站的分析与溯源：从死循环到whois线索.html">
+              <div class="card-image-wrapper">
+                <div class="card-image" style="background-image: url('/uploads/2026-10-16/1792156617636-xa79jx.jpg');"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-meta">2026-09-13 · admin</div>
+                <h3>一次仿冒Chrome钓鱼站的分析与溯源：从死循环到Whois线索</h3>
+                <span class="read-more">了解更多 <i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </article>
+        
+      
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. 动态 ========== -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-title">
+      <h2>动态</h2>
+      <p>日常记录</p>
+    </div>
+    <div class="moments-grid">
+      
+        
+          <div class="moment-card">
+            <div class="moment-date">2026-10-17</div>
+            
+            <div class="moment-content">测试</div>
+            <div class="moment-author">— edit</div>
+          </div>
+        
+          <div class="moment-card">
+            <div class="moment-date">2026-10-16</div>
+            
+            <div class="moment-content">额</div>
+            <div class="moment-author">— edit</div>
+          </div>
+        
+          <div class="moment-card">
+            <div class="moment-date">2026-10-16</div>
+            
+            <div class="moment-content">第十条</div>
+            <div class="moment-author">— admin</div>
+          </div>
+        
+          <div class="moment-card">
+            <div class="moment-date">2026-10-16</div>
+            
+              <h3 class="moment-title">观察开发计划</h3>
+            
+            <div class="moment-content">加油吧，毕竟最近在写文学，技术狂热已经冷下去了</div>
+            <div class="moment-author">— lgdzo</div>
+          </div>
+        
+          <div class="moment-card">
+            <div class="moment-date">2026-10-06</div>
+            
+              <h3 class="moment-title">我的国庆假期</h3>
+            
+            <div class="moment-content">没了555~</div>
+            <div class="moment-author">— admin</div>
+          </div>
+        
+          <div class="moment-card">
+            <div class="moment-date">2026-10-05</div>
+            
+              <h3 class="moment-title">(◍•ᴗ•◍)</h3>
+            
+            <div class="moment-content">嘻嘻</div>
+            <div class="moment-author">— test</div>
+          </div>
+        
+      
+    </div>
+    
+      <div class="more-link">
+        <a href="/moments.html">更多动态 <i class="fas fa-chevron-right"></i></a>
+      </div>
+    
+  </div>
+</section>
+
+
+
+<!-- ========== 关于我 ========== -->
+
+<section class="section section-light" id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>关于我</h2>
+    </div>
+    <div class="about-container">
+      
+      <div class="about-image">
+        <img src="/uploads/2026-10-30/1793372781452-u7c9mz.png" alt="个人头像" class="avatar">
+      </div>
+      
+      <div class="about-content">
+        <!-- 使用  防 XSS，white-space: pre-wrap 保留后台输入的换行 -->
+        <p style="white-space: pre-wrap;">一名小肥物，专注于写奇奇怪怪的Web和与seewo斗智斗勇。拥有数年呼吸经验，热爱探索新技术，乐于作妖。
+
+日常生活中，主要负责对华为终端某型号4G通讯终端前端系统UX动画使用与鉴赏、性能测试与seewo集控漏洞研究。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</section>
+  </main>
+
+  <!-- 底部栏 -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>快速链接</h3>
+          <ul class="footer-links">
+            <li><a href="/">首页</a></li>
+            <li><a href="/posts.html">博文</a></li>
+            <li><a href="/moments.html">动态</a></li>
+            
+            <li><a href="/#about">关于我</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>联系我</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> blog2026@sina.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> 中国</li>
+          </ul>
+          <div class="social-links">
+            <a href="https://github.com/wng409" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025-present TechBlog. All rights reserved.
+          
+            <span class="powered-by"> | Powered by <a href="https://github.com/wng409/myblog-core" target="_blank" rel="noopener">myblog-core</a></span>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

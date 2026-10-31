@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"&&t!=="system")t="system";var m=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;var d=t==="dark"||(t==="system"&&m&&m.matches);document.documentElement.classList.toggle("dark",!!d);document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script src="/js/theme.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的第一次SRC挖洞：从B站评论区到被黑的政府网站</title>
+  <!-- 站点主题色（后台「站点设置」可改，默认 #e60012） -->
+  <style>:root { --brand-color: #e60012 }</style>
+  <link rel="stylesheet" href="/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body class="" data-static="true">
+  <!-- 顶部导航栏 -->
+  <header>
+  <div class="container header-container">
+    <!-- 修改点 1：将 div 换成 a 标签，加上 href="/" -->
+    <a href="/" class="logo">
+      <i class="fas fa-code"></i>
+      <span>TechBlog</span>
+    </a>
+
+    <!-- PC 横向导航 -->
+    <nav class="pc-nav">
+      <a href="/">首页</a>
+      <a href="/posts.html">博文</a>
+      <a href="/moments.html">动态</a>
+      
+      
+      <a href="/#about">关于我</a>
+    </nav>
+
+    <div class="nav-right">
+      
+<div class="theme-switch" data-theme-switch>
+  <button class="theme-toggle" id="themeTogglePc" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <button class="search-toggle" id="searchToggle" type="button" aria-label="搜索">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="菜单">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- 全屏菜单 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <!-- 修改点 2：将移动端的 div 也换成 a 标签 -->
+      <a href="/" class="logo">
+        <i class="fas fa-code"></i>
+        <span>TechBlog</span>
+      </a>
+      <button class="menu-close" id="menuClose" type="button" aria-label="关闭">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-menu-list">
+      <li><a href="/">首页<span class="arrow">›</span></a></li>
+      <li><a href="/posts.html">博文<span class="arrow">›</span></a></li>
+      <li><a href="/moments.html">动态<span class="arrow">›</span></a></li>
+      
+      
+      <li><a href="/#about">关于我<span class="arrow">›</span></a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      
+<div class="theme-switch theme-switch--circle" data-theme-switch>
+  <button class="theme-toggle" id="themeToggleMobile" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    <span>主题</span>
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <a href="https://github.com/wng409" target="_blank" rel="noopener" class="circle-btn">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:blog2026@sina.com" class="circle-btn">
+        <i class="fas fa-envelope"></i>
+        <span>邮件</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 页面内容 -->
+  <main>
+    
+<section class="page-title" style="padding:40px 0;">
+  <div class="container">
+    <h1>我的第一次SRC挖洞：从B站评论区到被黑的政府网站</h1>
+    <div style="color:var(--hw-medium-gray); margin-top:10px;">
+      <span><i class="far fa-calendar"></i> 2026-09-13</span>
+      <span style="margin-left:20px;"><i class="far fa-user"></i> admin</span>
+      
+        <span style="margin-left:20px;"><i class="fas fa-tags"></i> SRC</span>
+      
+    </div>
+  </div>
+</section>
+
+<section class="articles-content" style="padding-top:0;">
+  <div class="container">
+    <article class="article-item" style="padding:40px;">
+      <div class="article-body">
+        <h1>从一条可疑链接到完整攻击链：一次脱敏后的SRC溯源记录</h1>
+<h2>前言</h2>
+<p>这是我的第一次SRC漏洞挖掘经历。</p>
+<p>整个过程从一个视频平台评论区的可疑链接开始，最终追出了一条完整的攻击链：某视频平台客户端漏洞 → 黑产跳板域名 → 被篡改的政府网站页面。</p>
+<p>虽然最终平台SRC判定为“内部已知”，没有给奖励，但这次经历让我完整走通了“发现→分析→溯源→上报”的全流程，也让我真正理解了什么是“攻击链思维”。</p>
+<p>这篇文章记录了整个过程，希望能给同样刚入门的安全研究者一些参考。本文已对真实域名、URL、路径、编号、单位、时间等信息进行脱敏处理。</p>
+<h2>一、偶然的发现</h2>
+<p>事情很偶然。那天我像往常一样刷某视频平台，在某个视频的评论区里，看到了一条奇怪的链接：</p>
+<pre><code class="language-text">https://d.example.com/download_app.html?from_spmid=...&amp;plat_id=...&amp;preUrl=&lt;十六进制编码&gt;&amp;schema=...&amp;share_from=h5
+</code></pre>
+<p>域名是 <code>d.example.com</code>，看起来是平台官方的下载页。但后面的参数特别长，而且 <code>preUrl</code> 的值是一长串十六进制编码，这立刻引起了我的注意。</p>
+<p>正常情况下，一个下载页的跳转参数不需要这么复杂。我决定把它复制下来，先在电脑浏览器里分析，而不是直接在App里点开。</p>
+<h2>二、解码与漏洞确认</h2>
+<p>把 <code>preUrl</code> 参数的值进行十六进制解码后，得到了类似这样的内容：</p>
+<pre><code class="language-text">appscheme://mall/web?url=http://trusted.example@malicious.example/?demo
+</code></pre>
+<p>看到这个，我立刻意识到问题所在。</p>
+<p>这是一个平台客户端的自定义 URL Scheme，其中 <code>mall/web</code> 模块用于在内置 WebView 中加载指定的 URL。而这个 URL 参数的值是：</p>
+<pre><code class="language-text">http://trusted.example@malicious.example/
+</code></pre>
+<p>根据 URL 标准规范（RFC 1738），<code>@</code> 符号之前的部分被解析为用户名和密码认证信息，实际请求的主机名是 <code>@</code> 之后的部分，也就是 <code>malicious.example</code>。</p>
+<p>但是，平台客户端在进行域名白名单校验时，可能只是简单地截取了 <code>://</code> 到第一个 <code>/</code> 之间的字符串，误将 <code>trusted.example</code> 识别为目标主机，从而认为这是一个合法的平台域名，通过了校验。</p>
+<p>校验层以为自己在访问平台域名，浏览器内核却在访问 <code>malicious.example</code>。这就是典型的“URL解析不一致”漏洞。</p>
+<h2>三、溯源：从跳板到政府网站</h2>
+<p>确认漏洞原理后，我并没有停下。我访问了 <code>malicious.example</code>，发现它只是一个简单的跳转页，迅速将我重定向到了一个全新的地址：</p>
+<pre><code class="language-text">https://gov.example/path/...?...
+</code></pre>
+<p>当我看到政府网站域名时，心里咯噔一下。</p>
+<p>这是某地政府机关的官方网站。</p>
+<p>也就是说，攻击链是这样的：</p>
+<pre><code class="language-text">某视频平台客户端漏洞 → 黑产跳板域名 → 被篡改的政府网站页面
+</code></pre>
+<p>攻击者利用平台客户端的漏洞作为入口，将用户流量导向黑产域名，最终落地在一个被篡改的政府网站上展示非法内容。这样做的目的是利用政府域名的公信力来躲避审查、提升非法网站的搜索引擎排名。</p>
+<h2>四、受阻：被401和403拦在门外</h2>
+<p>为了进一步分析攻击者是如何控制这个跳板服务器的，我尝试用 <code>dirsearch</code> 对 <code>malicious.example</code> 进行目录扫描。</p>
+<p>结果几乎全是 <code>401 Unauthorized</code> 和 <code>403 Forbidden</code>。</p>
+<p>扫描器完全“吃瘪”。这说明 <code>malicious.example</code> 部署了非常严格的访问控制，包括 Cloudflare WAF 和 HTTP 基础认证，是一个高度专业化的跳板服务器。</p>
+<p>从扫描结果中，我也提取到了一些有价值的指纹信息：</p>
+<ul>
+<li>大量 <code>/WEB-INF/</code> 路径被拦截，说明服务器上部署了 Java Web 应用；</li>
+<li>对 <code>wp-config.php</code> 等文件的探测返回 <code>403</code>，说明可能存在 WordPress 站点；</li>
+<li>对 <code>/var/lib/cloud/instance/</code> 的请求返回 <code>401</code>，说明服务器运行在云平台上。</li>
+</ul>
+<p>这些信息虽然不能直接帮我“提权”，但足以证明这台服务器的专业性和攻击者的组织化程度。</p>
+<h2>五、处置：双线合规上报</h2>
+<p>确认了完整的攻击链后，我做了两件事：</p>
+<p>第一，向某视频平台SRC提交漏洞报告。</p>
+<p>我整理了漏洞原理、复现步骤和攻击链分析，按照平台SRC的格式要求提交了报告。虽然最终审核结果是“内部已知”，没有奖励，但这是我第一次完整走通SRC提交流程。</p>
+<p>第二，向CNCERT提交政府网站被黑报告。</p>
+<p>由于政府网站没有公开的SRC平台，我按照《网络安全事件报告管理办法》的要求，向国家互联网应急中心提交了网络安全事件报告。</p>
+<p>报告内容包括：</p>
+<ul>
+<li>事发单位：某地政府机关；</li>
+<li>初判事件类型：网络攻击事件；</li>
+<li>事件经过：从平台漏洞到跳板域名再到政府网站被篡改的完整链路；</li>
+<li>已采取的措施：向某视频平台SRC提交漏洞报告；</li>
+<li>证据材料：URL解码过程、跳转抓包记录、页面截图。</li>
+</ul>
+<p>报告提交后，我获得了一个受理编号（编号已隐去）。</p>
+<p>后来我再次访问那个政府网站页面时，发现它已经返回 <code>504 Gateway Timeout</code>，说明页面已经被下线处置了。</p>
+<h2>六、收获与反思</h2>
+<p>这次挖洞虽然没有拿到奖金，但收获是巨大的：</p>
+<h3>1. 建立了攻击链思维</h3>
+<p>以前我挖洞是“看到一个点就挖一个点”，这次我学会了顺着一条线索一直追下去，把分散的漏洞点连成一条完整的攻击链。</p>
+<h3>2. 学会了合规处置流程</h3>
+<p>从平台SRC到CNCERT，我走通了商业平台和公益平台两条上报路径，理解了不同渠道的定位和规则。</p>
+<h3>3. 体会了白帽的法律边界</h3>
+<p>在对政府网站进行分析时，我始终坚持“只被动观察、不主动扫描”的原则。政府网站不是SRC目标，未经授权对其进行漏洞扫描是违法的。合规上报才是正确的处理方式。</p>
+<h3>4. 接受了“没有奖励”的常态</h3>
+<p>平台SRC判定“内部已知”，政府网站没有奖金。这在漏洞挖掘中是常态——不是每次努力都有物质回报。但能力提升和经验积累，是比奖金更重要的收获。</p>
+<h2>七、给新手的建议</h2>
+<p>如果你也是刚入门的安全研究者，我有几点建议：</p>
+<ol>
+<li>保持好奇心：一个奇怪的链接、一个异常的跳转，都可能是漏洞的入口。</li>
+<li>学会解码和分析：遇到编码过的参数，先解码看看它到底想干什么。</li>
+<li>建立攻击链思维：不要满足于发现一个漏洞，试着追踪它最终会通向哪里。</li>
+<li>合规第一：只在授权范围内测试，不碰真实数据，不搞破坏。</li>
+<li>善用工具和AI：遇到卡点不要死磕，及时求助，但求助后要理解原理。</li>
+<li>接受没有奖励的常态：SRC是概率游戏，“内部已知”和“重复”是家常便饭，重要的是持续产出。</li>
+</ol>
+<h2>八、结语</h2>
+<p>从视频平台评论区的一条可疑链接，到一条完整的攻击链，再到两份合规报告——这是我第一次SRC挖洞的全部经历。</p>
+<p>它没有让我一夜暴富，但让我真正踏进了网络安全的大门。</p>
+<p>下一个洞，正在路上。</p>
+<hr>
+<p><strong>脱敏说明：</strong> 本文所有真实域名、URL、路径、单位名称、报告编号、时间戳等均已替换或隐去。文中出现的 <code>example</code>、<code>malicious.example</code>、<code>gov.example</code>、<code>appscheme</code> 等均为占位符，仅用于说明技术原理，不代表任何真实目标。</p>
+<p><strong>免责声明：</strong> 本文仅用于安全研究与技术交流。所有分析均在合规范围内进行，未对任何目标系统进行未授权的访问或破坏。文中涉及的漏洞已向相关平台提交报告。请勿利用文中信息从事任何违法活动。</p>
+
+      </div>
+      
+      <div class="article-footer" style="margin-top:30px; border-top:1px solid var(--hw-border); padding-top:20px;">
+        <a href="/posts.html" class="project-link"><i class="fas fa-arrow-left"></i> 返回列表</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+  </main>
+
+  <!-- 底部栏 -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>快速链接</h3>
+          <ul class="footer-links">
+            <li><a href="/">首页</a></li>
+            <li><a href="/posts.html">博文</a></li>
+            <li><a href="/moments.html">动态</a></li>
+            
+            <li><a href="/#about">关于我</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>联系我</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> blog2026@sina.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> 中国</li>
+          </ul>
+          <div class="social-links">
+            <a href="https://github.com/wng409" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025-present TechBlog. All rights reserved.
+          
+            <span class="powered-by"> | Powered by <a href="https://github.com/wng409/myblog-core" target="_blank" rel="noopener">myblog-core</a></span>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

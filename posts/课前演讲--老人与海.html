@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"&&t!=="system")t="system";var m=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;var d=t==="dark"||(t==="system"&&m&&m.matches);document.documentElement.classList.toggle("dark",!!d);document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script src="/js/theme.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课前演讲--老人与海</title>
+  <!-- 站点主题色（后台「站点设置」可改，默认 #e60012） -->
+  <style>:root { --brand-color: #e60012 }</style>
+  <link rel="stylesheet" href="/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body class="" data-static="true">
+  <!-- 顶部导航栏 -->
+  <header>
+  <div class="container header-container">
+    <!-- 修改点 1：将 div 换成 a 标签，加上 href="/" -->
+    <a href="/" class="logo">
+      <i class="fas fa-code"></i>
+      <span>TechBlog</span>
+    </a>
+
+    <!-- PC 横向导航 -->
+    <nav class="pc-nav">
+      <a href="/">首页</a>
+      <a href="/posts.html">博文</a>
+      <a href="/moments.html">动态</a>
+      
+      
+      <a href="/#about">关于我</a>
+    </nav>
+
+    <div class="nav-right">
+      
+<div class="theme-switch" data-theme-switch>
+  <button class="theme-toggle" id="themeTogglePc" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <button class="search-toggle" id="searchToggle" type="button" aria-label="搜索">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="菜单">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- 全屏菜单 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <!-- 修改点 2：将移动端的 div 也换成 a 标签 -->
+      <a href="/" class="logo">
+        <i class="fas fa-code"></i>
+        <span>TechBlog</span>
+      </a>
+      <button class="menu-close" id="menuClose" type="button" aria-label="关闭">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-menu-list">
+      <li><a href="/">首页<span class="arrow">›</span></a></li>
+      <li><a href="/posts.html">博文<span class="arrow">›</span></a></li>
+      <li><a href="/moments.html">动态<span class="arrow">›</span></a></li>
+      
+      
+      <li><a href="/#about">关于我<span class="arrow">›</span></a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      
+<div class="theme-switch theme-switch--circle" data-theme-switch>
+  <button class="theme-toggle" id="themeToggleMobile" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    <span>主题</span>
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <a href="https://github.com/wng409" target="_blank" rel="noopener" class="circle-btn">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:blog2026@sina.com" class="circle-btn">
+        <i class="fas fa-envelope"></i>
+        <span>邮件</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 页面内容 -->
+  <main>
+    
+<section class="page-title" style="padding:40px 0;">
+  <div class="container">
+    <h1>课前演讲--老人与海</h1>
+    <div style="color:var(--hw-medium-gray); margin-top:10px;">
+      <span><i class="far fa-calendar"></i> 2026-10-31</span>
+      <span style="margin-left:20px;"><i class="far fa-user"></i> admin</span>
+      
+        <span style="margin-left:20px;"><i class="fas fa-tags"></i> 课前演讲</span>
+      
+    </div>
+  </div>
+</section>
+
+<section class="articles-content" style="padding-top:0;">
+  <div class="container">
+    <article class="article-item" style="padding:40px;">
+      <div class="article-body">
+        <p>《老人与海》读书分享</p>
+<p>同学们，大家好。今天我想和大家分享海明威的《老人与海》。
+故事很简单：古巴老渔夫圣地亚哥连续八十四天没捕到鱼，第八十五天钓到一条巨大的马林鱼，在海上搏斗三天三夜才杀死它。返航途中鲨鱼群不断来袭，等他回到港口，那条大鱼只剩下一副骨架。
+很多人会问：他拼了命，到头来什么也没得到，这不就是一个失败的故事吗？这正是这本书最打动我的地方。海明威写了一句很有名的话——“一个人可以被毁灭，但不能被打败。”老人失去了鱼肉，但没有失去尊严、勇气和意志。他明知道鲨鱼会来，明知道自己可能守不住，还是一次次举起鱼叉、绑好刀子、拿起短棍。这种“明知不可为而为之”的坚持，才是这本书真正的重量。
+但圣地亚哥不是简单的“硬汉”。他的核心不是“硬”，而是清醒。他八十四天没打到鱼，被年轻渔夫嘲笑，唯一陪伴他的男孩也被迫离开。他知道自己老了，海明威写他的皱纹、褐斑、旧伤疤像“无鱼可打的沙漠中被侵蚀的地方”。搏斗中他多次说“它们把我打垮了”，鲨鱼撕碎鱼肉后也承认“它们打败了我，真的”。可正是这种不自我欺骗的清醒，构成他最有力量的部分：他的硬，不是拒绝承认失败，而是在承认失败的前提下仍然不放弃动作。手被鱼线割出血、左手抽筋、几天几夜不能合眼，他靠的不是“我一定会赢”的幻觉，而是“鱼啊，我到死也要跟你在一块儿”。他称大鱼为“兄弟”，杀它不是炫耀，而是为了渔夫的荣誉。所以他的性格有三层：接受衰老与局限的诚实，在极限中不放弃动作的韧性，以及对对手保持敬意的尊严感。
+如果抗争注定无法改变结局，意义在哪里？圣地亚哥像加缪笔下的西西弗斯：永远推石上山，石头永远滚落，但反抗本身捍卫人的尊严。他的价值不在改变结局，而在反抗过程塑造的人格光辉。他令人难忘，不是因为赢了，而是因为在一场明知会输的搏斗中没有提前退场。
+海明威的“冰山原则”也值得一说：表面是简洁白描，水下藏着庞大情感。老人反复梦见狮子，小说最后一句也是“老人正梦见狮子”。狮子象征内在生命力的不可熄灭，与那副鱼骨架形成尖锐对照，把“不败”落在精神维度。
+现实中，有人用华为对照圣地亚哥：极限压力下不放弃动作。但华为最终有可验证的“回来”——营收回升、麒麟回归；而老人回港只有一副骨架，海明威没给他任何世俗补偿。科学家赵忠贤研究高温超导，十年失败连着失败，一批批人离开，实验室一度解散，他又坐了近二十年冷板凳，说“热的时候坚持，冷的时候更要坚持”。华为代表“撑住之后可能回来”，赵忠贤代表“撑住之后可能很久什么都看不到”。圣地亚哥站在两者之间，把问题留给我们：你坚持，是因为相信会赢，还是因为这件事本身值得做到底？
+圣地亚哥带回的不“只是”一副骨架。那副骨架丈量出：一个人在知道自己会输时，还能走多远。海明威不给廉价安慰：鱼肉被吃光，付出可能不被看见，衰老不可逆。但他给出的答案不是“你会赢”，而是——你可以在知道可能不会赢的情况下，仍然选择有尊严地做下去。</p>
+<p>谢谢大家。</p>
+
+      </div>
+      
+      <div class="article-footer" style="margin-top:30px; border-top:1px solid var(--hw-border); padding-top:20px;">
+        <a href="/posts.html" class="project-link"><i class="fas fa-arrow-left"></i> 返回列表</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+  </main>
+
+  <!-- 底部栏 -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>快速链接</h3>
+          <ul class="footer-links">
+            <li><a href="/">首页</a></li>
+            <li><a href="/posts.html">博文</a></li>
+            <li><a href="/moments.html">动态</a></li>
+            
+            <li><a href="/#about">关于我</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>联系我</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> blog2026@sina.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> 中国</li>
+          </ul>
+          <div class="social-links">
+            <a href="https://github.com/wng409" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025-present TechBlog. All rights reserved.
+          
+            <span class="powered-by"> | Powered by <a href="https://github.com/wng409/myblog-core" target="_blank" rel="noopener">myblog-core</a></span>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

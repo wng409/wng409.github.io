@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"&&t!=="system")t="system";var m=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;var d=t==="dark"||(t==="system"&&m&&m.matches);document.documentElement.classList.toggle("dark",!!d);document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script src="/js/theme.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课前演讲--格物致知</title>
+  <!-- 站点主题色（后台「站点设置」可改，默认 #e60012） -->
+  <style>:root { --brand-color: #e60012 }</style>
+  <link rel="stylesheet" href="/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body class="" data-static="true">
+  <!-- 顶部导航栏 -->
+  <header>
+  <div class="container header-container">
+    <!-- 修改点 1：将 div 换成 a 标签，加上 href="/" -->
+    <a href="/" class="logo">
+      <i class="fas fa-code"></i>
+      <span>TechBlog</span>
+    </a>
+
+    <!-- PC 横向导航 -->
+    <nav class="pc-nav">
+      <a href="/">首页</a>
+      <a href="/posts.html">博文</a>
+      <a href="/moments.html">动态</a>
+      
+      
+      <a href="/#about">关于我</a>
+    </nav>
+
+    <div class="nav-right">
+      
+<div class="theme-switch" data-theme-switch>
+  <button class="theme-toggle" id="themeTogglePc" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <button class="search-toggle" id="searchToggle" type="button" aria-label="搜索">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="菜单">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- 全屏菜单 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <!-- 修改点 2：将移动端的 div 也换成 a 标签 -->
+      <a href="/" class="logo">
+        <i class="fas fa-code"></i>
+        <span>TechBlog</span>
+      </a>
+      <button class="menu-close" id="menuClose" type="button" aria-label="关闭">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-menu-list">
+      <li><a href="/">首页<span class="arrow">›</span></a></li>
+      <li><a href="/posts.html">博文<span class="arrow">›</span></a></li>
+      <li><a href="/moments.html">动态<span class="arrow">›</span></a></li>
+      
+      
+      <li><a href="/#about">关于我<span class="arrow">›</span></a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      
+<div class="theme-switch theme-switch--circle" data-theme-switch>
+  <button class="theme-toggle" id="themeToggleMobile" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    <span>主题</span>
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <a href="https://github.com/wng409" target="_blank" rel="noopener" class="circle-btn">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:blog2026@sina.com" class="circle-btn">
+        <i class="fas fa-envelope"></i>
+        <span>邮件</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 页面内容 -->
+  <main>
+    
+<section class="page-title" style="padding:40px 0;">
+  <div class="container">
+    <h1>课前演讲--格物致知</h1>
+    <div style="color:var(--hw-medium-gray); margin-top:10px;">
+      <span><i class="far fa-calendar"></i> 2026-10-31</span>
+      <span style="margin-left:20px;"><i class="far fa-user"></i> admin</span>
+      
+        <span style="margin-left:20px;"><i class="fas fa-tags"></i> 课前演讲</span>
+      
+    </div>
+  </div>
+</section>
+
+<section class="articles-content" style="padding-top:0;">
+  <div class="container">
+    <article class="article-item" style="padding:40px;">
+      <div class="article-body">
+        <p>格物，不止一种答案</p>
+<p>尊敬的老师，亲爱的同学们：</p>
+<p>大家好！</p>
+<p>如果让你盯着一根竹子看七天七夜，你能看出什么？</p>
+<p>王阳明试过。他按朱熹的方法去“格”竹子，七天七夜，一无所获，反而病了一场。竹子没格明白，人先病倒了。一次失败未必能否定朱熹，但它至少逼我们追问：是不是“格物”被理解偏了？格物，是不是本来就不该只有一种答案？</p>
+<p>《大学》有言：“致知在格物，物格而后知至。”这句话本身没错——真知不在空想中诞生，而在对事物的深入探究中显现。从神农尝百草，到屠呦呦190次失败后提取青蒿素，那些经得起检验的真知，大多要从“格物”中来。</p>
+<p>我不否认朱熹的伟大。但说实话，我对一种被窄化的“格物”始终心存疑虑。</p>
+<p>朱熹说，一草一木里都有“理”。这很了不起。可如果“理”早就完整地藏在事物里，那格物不就成了拿着答案找证据？科学却常常是：先假设，再验证，错了就改，甚至推翻。更麻烦的是，他给格物定的终点是“穷天理，明人伦”。在朱熹那里，格物最终要落到天理人伦，这就容易让具体知识变成道德附庸。格多少算够？怎样算通？没有尺子，最后容易滑向权威的独断。</p>
+<p>我警惕的不是朱熹本人，而是一种很容易变形的求知方式：看似让你探究，其实答案早就写好了。</p>
+<p>那真正的格物应该是什么？</p>
+<p>我说得简单点：先看，再想，再疑，再做，边做边省。</p>
+<p>看，是观察；想，是总结；疑，是提出问题，是想想有没有反例；做，是实践检验；省，是追问该不该做、做得对不对。伦理追问不是事后补票，而是贯穿始终。</p>
+<p>这其实也是毛泽东在《实践论》中强调的：认识从实践中来，还要回到实践中去。你总结的规律对不对？种一片竹子试试。若把格物窄化为向内体悟，就容易缺少实践检验这一环——没有检验，就永远不知道它到底对不对。</p>
+<p>当然，光看还不够。看会出错，数据也会骗人。格物，得走完完整的链条。</p>
+<p>回到现实。今天这个时代，信息爆炸，结论易得。搜索引擎三秒可答，短视频十五秒可讲。我们似乎“知道”得更多，却常常“理解”得更浅。用搜索代替思考，用碎片代替系统，用“知道”代替“理解”。</p>
+<p>就拿搜题来说。一道数学题，你是先自己推十分钟，还是直接搜答案？三秒拿到答案，爽。可下次遇到同类题，你还是不会。自己推十分钟，可能推不出来，但推的过程里，你真正在“格”这道题。这就是我们身边的“格物”。</p>
+<p>可《大学》讲“物格而后知至”，反过来想：没有格物，致知靠什么？怕只怕，不经格物的“知道”，只是披着知识外衣的浅薄。</p>
+<p>那回到我们高中生自己呢？</p>
+<p>面对一个不懂的概念，不急着背结论，而是先追问它从哪来；
+面对一条热搜，不急着站队，而是先找原始信息；
+面对AI这样的新事物，不急着转发标题党短视频，而是去了解它的原理、脉络和争议。</p>
+<p>这才是格物——不是被动接收结论，而是主动探究真相。</p>
+<p>《大学》说“知至而后意诚”。我反对的不是讲伦理，而是拿伦理当标准答案，去框住真知。先有真知，再谈诚意。真知之后，才谈我们该信什么、守什么、为什么而做——这才是“意诚”的前提。</p>
+<p>同学们，两千年前的“致知在格物”，今天依然闪光，但需要我们重新擦亮。不是照搬朱熹，而是继承那份探究的勇气，同时补上实践检验、批判思考，还有“该不该做”的判断。</p>
+<p>下次再看到一根竹子，别只盯七天七夜。去看它怎么长，去问它该不该被砍，去种一棵试试。</p>
+<p>这，才是我理解的格物。它不止一种答案，但每一种，都得从真知出发，经得起检验。</p>
+<p>愿我们不做知识的搬运工，而做思想的创造者。</p>
+<p>谢谢大家。</p>
+
+      </div>
+      
+      <div class="article-footer" style="margin-top:30px; border-top:1px solid var(--hw-border); padding-top:20px;">
+        <a href="/posts.html" class="project-link"><i class="fas fa-arrow-left"></i> 返回列表</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+  </main>
+
+  <!-- 底部栏 -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>快速链接</h3>
+          <ul class="footer-links">
+            <li><a href="/">首页</a></li>
+            <li><a href="/posts.html">博文</a></li>
+            <li><a href="/moments.html">动态</a></li>
+            
+            <li><a href="/#about">关于我</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>联系我</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> blog2026@sina.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> 中国</li>
+          </ul>
+          <div class="social-links">
+            <a href="https://github.com/wng409" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025-present TechBlog. All rights reserved.
+          
+            <span class="powered-by"> | Powered by <a href="https://github.com/wng409/myblog-core" target="_blank" rel="noopener">myblog-core</a></span>
+          
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
