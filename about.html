@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"&&t!=="system")t="system";var m=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;var d=t==="dark"||(t==="system"&&m&&m.matches);document.documentElement.classList.toggle("dark",!!d);document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script src="/js/theme.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我</title>
+  <!-- 站点主题色（后台「站点设置」可改，默认 #e60012） -->
+  <style>:root { --brand-color: #d32d26 }</style>
+  <link rel="stylesheet" href="/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body class="" data-static="true">
+  <!-- 顶部导航栏 -->
+  <header>
+  <div class="container header-container">
+    <!-- 修改点 1：将 div 换成 a 标签，加上 href="/" -->
+    <a href="/" class="logo">
+      <i class="fas fa-code"></i>
+      <span>TechBlog</span>
+    </a>
+
+    <!-- PC 横向导航 -->
+    <nav class="pc-nav">
+      <a href="/">首页</a>
+      <a href="/posts.html">博文</a>
+      <a href="/moments.html">动态</a>
+      
+      
+      <a href="/about.html">关于我</a>
+    </nav>
+
+    <div class="nav-right">
+      
+<div class="theme-switch" data-theme-switch>
+  <button class="theme-toggle" id="themeTogglePc" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    
+    
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <button class="search-toggle" id="searchToggle" type="button" aria-label="搜索">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="菜单">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- 全屏菜单 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <!-- 修改点 2：将移动端的 div 也换成 a 标签 -->
+      <a href="/" class="logo">
+        <i class="fas fa-code"></i>
+        <span>TechBlog</span>
+      </a>
+      <button class="menu-close" id="menuClose" type="button" aria-label="关闭">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-menu-list">
+      <li><a href="/">首页<span class="arrow">›</span></a></li>
+      <li><a href="/posts.html">博文<span class="arrow">›</span></a></li>
+      <li><a href="/moments.html">动态<span class="arrow">›</span></a></li>
+      
+      
+      <li><a href="/about.html">关于我<span class="arrow">›</span></a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      
+<div class="theme-switch theme-switch--circle" data-theme-switch>
+  <button class="theme-toggle" id="themeToggleMobile" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    <span>主题</span>
+    
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <a href="https://github.com/wng409" target="_blank" rel="noopener" class="circle-btn">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:blog2026@sina.com" class="circle-btn">
+        <i class="fas fa-envelope"></i>
+        <span>邮件</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 页面内容 -->
+  <main>
+    <section class="about-wrapper">
+
+  <!-- 左侧名片 -->
+  <aside class="about-card-left">
+    <!-- 头像：直接读站点设置，不做任何兜底 -->
+    <img class="about-avatar" src="/uploads/2026-11-07/1794033327690-q1atu8.png" alt="头像">
+
+    <h1 class="about-name">wng409</h1>
+    <span class="about-title">全栈开发 / 数码爱好者</span>
+
+    <div class="social-links">
+      <a href="https://github.com/wng409" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="https://gitcode.com/wng409" target="_blank" rel="noopener" aria-label="GitCode">
+        <i class="fas fa-code-branch" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:blog2026@sina.com" aria-label="Email">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="contact-email">blog2026@sina.com</div>
+  </aside>
+
+  <!-- 右侧内容 -->
+  <main class="about-card-right">
+
+    <h2 class="section-title">简介</h2>
+    <div style="white-space: pre-wrap;">一名小肥物，专注于写奇奇怪怪的 Web，以及和 seewo 集控系统斗智斗勇。
+
+拥有数年丰富且稳定的呼吸经验，热爱探索新技术，更乐于在赛博世界里“作妖”。
+
+日常生活中，主要致力于：
+
+· 对华为终端某型号卫星通讯终端的前端系统进行 UX 动画鉴赏与性能压力测试；
+· 以及深陷 seewo 集控漏洞的逆向研究无法自拔。</div>
+
+    <h2 class="section-title">技术栈</h2>
+    <div class="tech-stack">
+      <span class="tag-pill">Node.js</span>
+      <span class="tag-pill">Express</span>
+      <span class="tag-pill">SQLite</span>
+      <span class="tag-pill">EJS</span>
+      <span class="tag-pill">Linux</span>
+      <span class="tag-pill">Nginx</span>
+    </div>
+
+    <h2 class="section-title">折腾履历</h2>
+    <div class="history-list">
+      <div class="history-item">
+        <span class="history-date">2026.11 - 至今</span>
+        <div class="history-title">v5.0 全站 UI 重构与内容体验升级</div>
+        <div class="history-desc">首页改为沉浸式首屏 + 第二屏双栏与粘性侧栏，页脚统一为极简浅色四列；原生 alert/confirm 全部升级为鸿蒙风格语义化弹窗，文章详情页、About 页面与 Tagify 编辑器同步改版，移动端笔记模块改为三列方块。</div>
+      </div>
+
+      <div class="history-item">
+        <span class="history-date">2026.10 - 2026.11</span>
+        <div class="history-title">v4.x 实时架构与静态站双轨</div>
+        <div class="history-desc">后台完成 HarmonyOS 风格重构与侧边栏 / 沙盒演示页落地，实装站点设置换肤与沉浸式 Hero；以 SSE 实时推送取代 30s 轮询，SSG 静态站导出与静态搜索正式上线，并在导出时隔离私密文章与媒体资产，视频封面改为 FFmpeg 异步生成。</div>
+      </div>
+
+      <div class="history-item">
+        <span class="history-date">2026.09 - 2026.10</span>
+        <div class="history-title">v3.x 权限体系与自动化运维</div>
+        <div class="history-desc">落地 admin / editor / viewer 三级角色、作者归属校验与每日配额，补全软删除、回收站与操作日志；上线公开服务器状态页、备份脚本与钉钉告警、全局深色模式，并完成笔记库与华为风首页重构。</div>
+      </div>
+
+      <div class="history-item">
+        <span class="history-date">2026.08 - 2026.09</span>
+        <div class="history-title">v2.x 基座搭建与 CMS 成型</div>
+        <div class="history-desc">从服务器重装前的完整代码备份起步，完成 Markdown + EasyMDE 写作、Banner 与推荐位、用户管理、统一后台导航等 CMS 骨架，同步加固 CSP、CSRF 与登录权限，修复多轮高危漏洞。</div>
+      </div>
+    </div>
+
+  </main>
+
+</section>
+  </main>
+
+  <!-- 底部栏（独立 partial，便于后续整体替换） -->
+  <footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-grid">
+
+      <!-- 列 1：品牌 -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <i class="fas fa-code" aria-hidden="true"></i>
+          <span>TechBlog</span>
+        </a>
+        <h2>记录我的技术与生活</h2>
+        <p>保持热爱，奔赴山海。<br>折腾永无止境。</p>
+      </div>
+
+      <!-- 列 2：快速链接 -->
+      <div class="footer-col">
+        <h4>快速链接</h4>
+        <ul class="footer-nav">
+          <li><a href="/">首页</a></li>
+          <li><a href="/posts.html">博文</a></li>
+          
+            <li><a href="/moments.html">动态</a></li>
+          
+          <li><a href="/about.html">关于我</a></li>
+          
+        </ul>
+      </div>
+
+      <!-- 列 3：资源 -->
+      <div class="footer-col">
+        <h4>资源</h4>
+        <ul class="footer-nav">
+          <li><a href="https://github.com/wng409" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://gitee.com/wng409" target="_blank" rel="noopener">Gitee</a></li>
+          <li><a href="https://gitcode.com/wng409" target="_blank" rel="noopener">GitCode</a></li>
+          
+        </ul>
+      </div>
+
+      <!-- 列 4：联系我 -->
+      <div class="footer-col">
+        <h4>联系我</h4>
+        <ul class="footer-nav">
+          <li class="footer-contact">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:blog2026@sina.com">blog2026@sina.com</a>
+          </li>
+          <li class="footer-contact">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>中国</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 底部版权：四列下方居中 -->
+    <div class="footer-bottom">
+      <p>&copy; 2025-present TechBlog. All rights reserved.
+        
+          <span class="powered-by"> | Powered by <a href="https://github.com/wng409/myblog-core" target="_blank" rel="noopener">myblog-core</a></span>
+        
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="/js/hm-ui.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"&&t!=="system")t="system";var m=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;var d=t==="dark"||(t==="system"&&m&&m.matches);document.documentElement.classList.toggle("dark",!!d);document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script src="/js/theme.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <!-- 站点主题色（后台「站点设置」可改，默认 #e60012） -->
+  <style>:root { --brand-color: #d32d26 }</style>
+  <link rel="stylesheet" href="/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body class="has-hero" data-static="true">
+  <!-- 顶部导航栏 -->
+  <header>
+  <div class="container header-container">
+    <!-- 修改点 1：将 div 换成 a 标签，加上 href="/" -->
+    <a href="/" class="logo">
+      <i class="fas fa-code"></i>
+      <span>TechBlog</span>
+    </a>
+
+    <!-- PC 横向导航 -->
+    <nav class="pc-nav">
+      <a href="/">首页</a>
+      <a href="/posts.html">博文</a>
+      <a href="/moments.html">动态</a>
+      
+      
+      <a href="/about.html">关于我</a>
+    </nav>
+
+    <div class="nav-right">
+      
+<div class="theme-switch" data-theme-switch>
+  <button class="theme-toggle" id="themeTogglePc" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    
+    
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <button class="search-toggle" id="searchToggle" type="button" aria-label="搜索">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="菜单">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- 全屏菜单 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <!-- 修改点 2：将移动端的 div 也换成 a 标签 -->
+      <a href="/" class="logo">
+        <i class="fas fa-code"></i>
+        <span>TechBlog</span>
+      </a>
+      <button class="menu-close" id="menuClose" type="button" aria-label="关闭">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-menu-list">
+      <li><a href="/">首页<span class="arrow">›</span></a></li>
+      <li><a href="/posts.html">博文<span class="arrow">›</span></a></li>
+      <li><a href="/moments.html">动态<span class="arrow">›</span></a></li>
+      
+      
+      <li><a href="/about.html">关于我<span class="arrow">›</span></a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      
+<div class="theme-switch theme-switch--circle" data-theme-switch>
+  <button class="theme-toggle" id="themeToggleMobile" type="button" aria-label="切换主题" aria-haspopup="true" aria-expanded="false">
+    <i class="theme-toggle-icon fas fa-circle-half-stroke" aria-hidden="true"></i>
+    <span>主题</span>
+    
+  </button>
+  <div class="theme-menu" role="menu" aria-label="主题模式">
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="system"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><span>跟随系统</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light"><i class="fas fa-sun" aria-hidden="true"></i><span>浅色</span></button>
+    <button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark"><i class="fas fa-moon" aria-hidden="true"></i><span>深色</span></button>
+  </div>
+</div>
+      <a href="https://github.com/wng409" target="_blank" rel="noopener" class="circle-btn">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:blog2026@sina.com" class="circle-btn">
+        <i class="fas fa-envelope"></i>
+        <span>邮件</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 页面内容 -->
+  <main>
+    
+
+
+<!-- ========== 0. 沉浸式首屏（大图 + 主标题 + 副标题 + 向下箭头，保持原样） ========== -->
+<section class="hero-cover" id="homeHero">
+  <img class="hero-media" src="/uploads/2026-11-07/1794033345325-b58bgp.jpg" alt="" fetchpriority="high" decoding="async">
+  <div class="hero-center-title" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 2;">
+    <h1 class="hero-title" style="font-size: 3rem; margin: 0;">我的博客</h1>
+  </div>
+  <div class="hero-bottom-area" style="position: absolute; bottom: 92px; left: 0; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 16px; z-index: 2;">
+    <p style="color: #9ca3af; font-size: 15px; letter-spacing: 2px; margin: 0;">记录一些随笔和项目</p>
+  </div>
+  <i class="fas fa-chevron-down hero-arrow" aria-hidden="true"></i>
+</section>
+
+
+
+<div class="home-main">
+
+  <!-- 第二屏顶部大字：沿用首屏副标题 -->
+  <h1 class="home-headline">记录一些随笔和项目</h1>
+
+  <div class="home-grid">
+
+  <!-- ================= 左栏 ================= -->
+  <div class="home-left">
+
+    <!-- A. 大 Banner：轮播换皮（DOM 结构 / ID / 类名保持不变，main.js 依赖） -->
+    
+      <div class="banner-carousel home-banner">
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="carouselTrack">
+            
+              <div class="carousel-slide active">
+                <a href="/posts/countingstars.html">
+                  <div class="slide-image" style="background-image: url('/uploads/2026-10-16/1792155629949-cwdglk.jpg');">
+                    <div class="slide-overlay">
+                      <h2>！</h2>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            
+              <div class="carousel-slide ">
+                <a href="#">
+                  <div class="slide-image" style="background-image: url('/uploads/2026-10-02/1790948357624-z36g6z.jpg');">
+                    <div class="slide-overlay">
+                      <h2>遥遥领先</h2>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            
+              <div class="carousel-slide ">
+                <a href="/posts/课前演讲--老人与海.html">
+                  <div class="slide-image" style="background-image: url('/uploads/2026-10-31/1793416405033-hbgth9.png');">
+                    <div class="slide-overlay">
+                      <h2>课前演讲--老人与海</h2>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            
+              <div class="carousel-slide ">
+                <a href="/posts/课前演讲--格物致知.html">
+                  <div class="slide-image" style="background-image: url('/uploads/2026-10-31/1793416486337-lvns0o.jpg');">
+                    <div class="slide-overlay">
+                      <h2>课前演讲--格物致知</h2>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            
+          </div>
+          <button class="carousel-btn prev" id="carouselPrev" type="button" aria-label="上一张">&#10094;</button>
+          <button class="carousel-btn next" id="carouselNext" type="button" aria-label="下一张">&#10095;</button>
+          <div class="carousel-dots">
+            
+              <span class="dot active" data-index="0"></span>
+            
+              <span class="dot " data-index="1"></span>
+            
+              <span class="dot " data-index="2"></span>
+            
+              <span class="dot " data-index="3"></span>
+            
+          </div>
+        </div>
+      </div>
+    
+
+    <!-- B. 最新文章：左文右图 -->
+    <section class="home-card">
+      <div class="home-card-head">
+        <h2>最新文章</h2>
+        <a class="home-more" href="/posts.html">全部 <i class="fas fa-chevron-right"></i></a>
+      </div>
+
+      
+        <div class="post-list">
+          
+            <a class="post-item" href="/posts/课前演讲--格物致知.html">
+              <div class="post-item-body">
+                <h3 class="post-item-title">课前演讲--格物致知</h3>
+                
+                  <p class="post-item-desc">格物，不止一种答案 尊敬的老师，亲爱的同学们： 大家好！ 如果让你盯着一根竹子看七天七夜，你能看出什么？ 王阳明试过。他按朱熹的方法去“格”竹子，七天七夜，一无所获，反而病了一场。竹子没格明白，人先病倒了。一次失败未必能…</p>
+                
+                <div class="post-item-meta">
+                  <span><i class="far fa-user"></i>admin</span>
+                  <span><i class="far fa-calendar"></i>2026-10-31</span>
+                  
+                  
+                    <span class="post-item-tags">
+                      
+                        <span class="tag-pill js-tag-click" data-href="/posts.html?tag=%E8%AF%BE%E5%89%8D%E6%BC%94%E8%AE%B2">#课前演讲</span>
+                      
+                    </span>
+                  
+                </div>
+              </div>
+              <div class="post-item-thumb">
+                
+                  <img src="/uploads/2026-10-31/1793416486337-lvns0o.jpg" alt="" loading="lazy" decoding="async">
+                
+              </div>
+            </a>
+          
+            <a class="post-item" href="/posts/课前演讲--老人与海.html">
+              <div class="post-item-body">
+                <h3 class="post-item-title">课前演讲--老人与海</h3>
+                
+                  <p class="post-item-desc">《老人与海》读书分享 同学们，大家好。今天我想和大家分享海明威的《老人与海》。 故事很简单：古巴老渔夫圣地亚哥连续八十四天没捕到鱼，第八十五天钓到一条巨大的马林鱼，在海上搏斗三天三夜才杀死它。返航途中鲨鱼群不断来袭，等他…</p>
+                
+                <div class="post-item-meta">
+                  <span><i class="far fa-user"></i>admin</span>
+                  <span><i class="far fa-calendar"></i>2026-10-31</span>
+                  
+                  
+                    <span class="post-item-tags">
+                      
+                        <span class="tag-pill js-tag-click" data-href="/posts.html?tag=%E8%AF%BE%E5%89%8D%E6%BC%94%E8%AE%B2">#课前演讲</span>
+                      
+                    </span>
+                  
+                </div>
+              </div>
+              <div class="post-item-thumb">
+                
+                  <img src="/uploads/2026-10-31/1793416405033-hbgth9.png" alt="" loading="lazy" decoding="async">
+                
+              </div>
+            </a>
+          
+            <a class="post-item" href="/posts/背离与复活.html">
+              <div class="post-item-body">
+                <h3 class="post-item-title">背离与复活</h3>
+                
+                  <p class="post-item-desc">背离与复活 作者：矢凝泽 第一部：背离 一 那年冬天，D在辩论队最后一次发言时说了一句话：“我们要永远站在弱者这边。” 同一年，Z在日记里写：“秩序不是压迫，秩序是保护弱者最后一道防线。” 那时候他们以为自己站在同一边。…</p>
+                
+                <div class="post-item-meta">
+                  <span><i class="far fa-user"></i>lgdzo</span>
+                  <span><i class="far fa-calendar"></i>2026-10-16</span>
+                  
+                  
+                </div>
+              </div>
+              <div class="post-item-thumb">
+                
+                  <span class="post-item-thumb-ph"><i class="fas fa-file-alt"></i></span>
+                
+              </div>
+            </a>
+          
+            <a class="post-item" href="/posts/好歌推荐-我是过来人.html">
+              <div class="post-item-body">
+                <h3 class="post-item-title">好歌推荐-我是过来人</h3>
+                
+                  <p class="post-item-desc">这几天，一首名为《过来人》的AI歌曲刷屏了。上线一天点赞破百万，无数网友留言“想哭”“唱进心里去了”。我也被它击中了。 一首让古人“开口说话”的歌 《过来人》来自创作者喆FILM的“古人开麦”系列，是一首AI生成的“古人…</p>
+                
+                <div class="post-item-meta">
+                  <span><i class="far fa-user"></i>admin</span>
+                  <span><i class="far fa-calendar"></i>2026-10-16</span>
+                  
+                  
+                    <span class="post-item-tags">
+                      
+                        <span class="tag-pill js-tag-click" data-href="/posts.html?tag=music">#music</span>
+                      
+                    </span>
+                  
+                </div>
+              </div>
+              <div class="post-item-thumb">
+                
+                  <img src="/uploads/2026-10-16/1792155568549-n8ho8i.jpg" alt="" loading="lazy" decoding="async">
+                
+              </div>
+            </a>
+          
+            <a class="post-item" href="/posts/countingstars.html">
+              <div class="post-item-body">
+                <h3 class="post-item-title">好歌推荐-Counting Stars</h3>
+                
+                  <p class="post-item-desc">一首被碧昂斯“退回”的歌，如何成为全球播放超40亿次的传奇 有些歌，生来就带着使命。OneRepublic的《Counting Stars》就是其中之一。今天想聊聊这首陪伴了无数人深夜的歌。 “如果这首歌不行，我们可能就…</p>
+                
+                <div class="post-item-meta">
+                  <span><i class="far fa-user"></i>admin</span>
+                  <span><i class="far fa-calendar"></i>2026-10-06</span>
+                  
+                  
+                    <span class="post-item-tags">
+                      
+                        <span class="tag-pill js-tag-click" data-href="/posts.html?tag=music">#music</span>
+                      
+                    </span>
+                  
+                </div>
+              </div>
+              <div class="post-item-thumb">
+                
+                  <img src="/uploads/2026-10-16/1792155629949-cwdglk.jpg" alt="" loading="lazy" decoding="async">
+                
+              </div>
+            </a>
+          
+            <a class="post-item" href="/posts/一次仿冒chrome钓鱼站的分析与溯源：从死循环到whois线索.html">
+              <div class="post-item-body">
+                <h3 class="post-item-title">一次仿冒Chrome钓鱼站的分析与溯源：从死循环到Whois线索</h3>
+                
+                  <p class="post-item-desc">从仿冒 Chrome 钓鱼站到 Whois 溯源：一次脱敏后的安全分析记录 前言 前几天在浏览网页时，偶然发现了一个高仿 Google Chrome 下载页面的网站： 域名里重复出现的 google-google-goo…</p>
+                
+                <div class="post-item-meta">
+                  <span><i class="far fa-user"></i>admin</span>
+                  <span><i class="far fa-calendar"></i>2026-09-13</span>
+                  
+                  
+                    <span class="post-item-tags">
+                      
+                        <span class="tag-pill js-tag-click" data-href="/posts.html?tag=src">#src</span>
+                      
+                    </span>
+                  
+                </div>
+              </div>
+              <div class="post-item-thumb">
+                
+                  <img src="/uploads/2026-10-16/1792156617636-xa79jx.jpg" alt="" loading="lazy" decoding="async">
+                
+              </div>
+            </a>
+          
+        </div>
+      
+    </section>
+
+    <!-- B2. 推荐文章：两列小卡片（无数据不渲染） -->
+    
+      <section class="home-card">
+        <div class="home-card-head">
+          <h2>推荐文章</h2>
+          <a class="home-more" href="/posts.html">全部 <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <div class="post-list">
+          
+            <a class="post-item" href="/posts/课前演讲--格物致知.html">
+              <div class="post-item-body">
+                <h3 class="post-item-title">课前演讲--格物致知</h3>
+                
+                  <p class="post-item-desc">格物，不止一种答案 尊敬的老师，亲爱的同学们： 大家好！ 如果让你盯着一根竹子看七天七夜，你能看出什么？ 王阳明试过。他按朱熹的方法去“格”竹子，七天七夜，一无所获，反而病了一场。竹子没格明白，人先病倒了。一次失败未必能…</p>
+                
+                <div class="post-item-meta">
+                  <span><i class="far fa-user"></i>admin</span>
+                  <span><i class="far fa-calendar"></i>2026-10-31</span>
+                  
+                  
+                    <span class="post-item-tags">
+                      
+                        <span class="tag-pill js-tag-click" data-href="/posts.html?tag=%E8%AF%BE%E5%89%8D%E6%BC%94%E8%AE%B2">#课前演讲</span>
+                      
+                    </span>
+                  
+                </div>
+              </div>
+              <div class="post-item-thumb">
+                
+                  <img src="/uploads/2026-10-31/1793416486337-lvns0o.jpg" alt="" loading="lazy" decoding="async">
+                
+              </div>
+            </a>
+          
+            <a class="post-item" href="/posts/课前演讲--老人与海.html">
+              <div class="post-item-body">
+                <h3 class="post-item-title">课前演讲--老人与海</h3>
+                
+                  <p class="post-item-desc">《老人与海》读书分享 同学们，大家好。今天我想和大家分享海明威的《老人与海》。 故事很简单：古巴老渔夫圣地亚哥连续八十四天没捕到鱼，第八十五天钓到一条巨大的马林鱼，在海上搏斗三天三夜才杀死它。返航途中鲨鱼群不断来袭，等他…</p>
+                
+                <div class="post-item-meta">
+                  <span><i class="far fa-user"></i>admin</span>
+                  <span><i class="far fa-calendar"></i>2026-10-31</span>
+                  
+                  
+                    <span class="post-item-tags">
+                      
+                        <span class="tag-pill js-tag-click" data-href="/posts.html?tag=%E8%AF%BE%E5%89%8D%E6%BC%94%E8%AE%B2">#课前演讲</span>
+                      
+                    </span>
+                  
+                </div>
+              </div>
+              <div class="post-item-thumb">
+                
+                  <img src="/uploads/2026-10-31/1793416405033-hbgth9.png" alt="" loading="lazy" decoding="async">
+                
+              </div>
+            </a>
+          
+            <a class="post-item" href="/posts/背离与复活.html">
+              <div class="post-item-body">
+                <h3 class="post-item-title">背离与复活</h3>
+                
+                  <p class="post-item-desc">背离与复活 作者：矢凝泽 第一部：背离 一 那年冬天，D在辩论队最后一次发言时说了一句话：“我们要永远站在弱者这边。” 同一年，Z在日记里写：“秩序不是压迫，秩序是保护弱者最后一道防线。” 那时候他们以为自己站在同一边。…</p>
+                
+                <div class="post-item-meta">
+                  <span><i class="far fa-user"></i>lgdzo</span>
+                  <span><i class="far fa-calendar"></i>2026-10-16</span>
+                  
+                  
+                </div>
+              </div>
+              <div class="post-item-thumb">
+                
+                  <span class="post-item-thumb-ph"><i class="fas fa-file-alt"></i></span>
+                
+              </div>
+            </a>
+          
+        </div>
+      </section>
+    
+
+    <!-- C. 最新动态：竖向时间轴 -->
+    <section class="home-card">
+      <div class="home-card-head">
+        <h2>最新动态</h2>
+        <a class="home-more" href="/moments.html">全部 <i class="fas fa-chevron-right"></i></a>
+      </div>
+
+      
+        <div class="home-timeline">
+          
+            <div class="tl-item">
+              <div class="tl-card">
+                <div class="tl-head">
+                  <span class="tl-time"><i class="far fa-clock"></i>2026-11-13 18:47</span>
+                  <span class="tl-author">admin</span>
+                </div>
+                
+                <p class="tl-text">考完蛋啦 (┳Д┳)</p>
+              </div>
+            </div>
+          
+            <div class="tl-item">
+              <div class="tl-card">
+                <div class="tl-head">
+                  <span class="tl-time"><i class="far fa-clock"></i>2026-11-07 21:41</span>
+                  <span class="tl-author">admin</span>
+                </div>
+                
+                  <h3 class="tl-title">要考试辣</h3>
+                
+                <p class="tl-text">唉</p>
+              </div>
+            </div>
+          
+            <div class="tl-item">
+              <div class="tl-card">
+                <div class="tl-head">
+                  <span class="tl-time"><i class="far fa-clock"></i>2026-11-06 19:31</span>
+                  <span class="tl-author">putaojun6</span>
+                </div>
+                
+                  <h3 class="tl-title">e</h3>
+                
+                <p class="tl-text">hello</p>
+              </div>
+            </div>
+          
+            <div class="tl-item">
+              <div class="tl-card">
+                <div class="tl-head">
+                  <span class="tl-time"><i class="far fa-clock"></i>2026-10-18 11:09</span>
+                  <span class="tl-author">edit</span>
+                </div>
+                
+                <p class="tl-text">测试</p>
+              </div>
+            </div>
+          
+            <div class="tl-item">
+              <div class="tl-card">
+                <div class="tl-head">
+                  <span class="tl-time"><i class="far fa-clock"></i>2026-10-17 15:33</span>
+                  <span class="tl-author">edit</span>
+                </div>
+                
+                <p class="tl-text">额</p>
+              </div>
+            </div>
+          
+            <div class="tl-item">
+              <div class="tl-card">
+                <div class="tl-head">
+                  <span class="tl-time"><i class="far fa-clock"></i>2026-10-17 14:38</span>
+                  <span class="tl-author">admin</span>
+                </div>
+                
+                <p class="tl-text">第十条</p>
+              </div>
+            </div>
+          
+        </div>
+      
+    </section>
+
+  </div>
+
+  <!-- ================= 右栏 ================= -->
+  <aside class="home-side">
+
+    <!-- 个人名片 -->
+    <section class="home-card profile-card">
+      
+        <img class="profile-avatar" src="/uploads/2026-11-07/1794033327690-q1atu8.png" alt="头像" loading="lazy">
+      
+      <h2 class="profile-name">Hello, 我的博客</h2>
+      <p class="profile-desc">记录一些随笔和项目</p>
+
+      <div class="profile-stats">
+        <div class="stat">
+          <span class="stat-num">7</span>
+          <span class="stat-label">文章</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">13</span>
+          <span class="stat-label">动态</span>
+        </div>
+      </div>
+
+      <a class="home-pill" href="/about.html">关于我</a>
+    </section>
+
+    <!-- 热门标签 -->
+    <section class="home-card side-tags">
+      <div class="home-card-head">
+        <h2>热门标签</h2>
+        <a class="home-more" href="/posts.html">更多 <i class="fas fa-chevron-right"></i></a>
+      </div>
+
+      
+        <div class="tag-list">
+          
+            <a class="tag-row" href="/posts.html?tag=%E8%AF%BE%E5%89%8D%E6%BC%94%E8%AE%B2">
+              <span class="tag-name">#课前演讲</span>
+              <span class="tag-count">2</span>
+            </a>
+          
+            <a class="tag-row" href="/posts.html?tag=music">
+              <span class="tag-name">#music</span>
+              <span class="tag-count">2</span>
+            </a>
+          
+            <a class="tag-row" href="/posts.html?tag=src">
+              <span class="tag-name">#src</span>
+              <span class="tag-count">2</span>
+            </a>
+          
+            <a class="tag-row" href="/posts.html?tag=html">
+              <span class="tag-name">#html</span>
+              <span class="tag-count">1</span>
+            </a>
+          
+        </div>
+      
+    </section>
+
+    <!-- 笔记云盘：仅内网可见，复用 .tag-row 的尺寸与悬浮效果 -->
+    
+
+  </aside>
+
+  </div><!-- /.home-grid -->
+
+</div>
+  </main>
+
+  <!-- 底部栏（独立 partial，便于后续整体替换） -->
+  <footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-grid">
+
+      <!-- 列 1：品牌 -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <i class="fas fa-code" aria-hidden="true"></i>
+          <span>TechBlog</span>
+        </a>
+        <h2>记录我的技术与生活</h2>
+        <p>保持热爱，奔赴山海。<br>折腾永无止境。</p>
+      </div>
+
+      <!-- 列 2：快速链接 -->
+      <div class="footer-col">
+        <h4>快速链接</h4>
+        <ul class="footer-nav">
+          <li><a href="/">首页</a></li>
+          <li><a href="/posts.html">博文</a></li>
+          
+            <li><a href="/moments.html">动态</a></li>
+          
+          <li><a href="/about.html">关于我</a></li>
+          
+        </ul>
+      </div>
+
+      <!-- 列 3：资源 -->
+      <div class="footer-col">
+        <h4>资源</h4>
+        <ul class="footer-nav">
+          <li><a href="https://github.com/wng409" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://gitee.com/wng409" target="_blank" rel="noopener">Gitee</a></li>
+          <li><a href="https://gitcode.com/wng409" target="_blank" rel="noopener">GitCode</a></li>
+          
+        </ul>
+      </div>
+
+      <!-- 列 4：联系我 -->
+      <div class="footer-col">
+        <h4>联系我</h4>
+        <ul class="footer-nav">
+          <li class="footer-contact">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:blog2026@sina.com">blog2026@sina.com</a>
+          </li>
+          <li class="footer-contact">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>中国</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 底部版权：四列下方居中 -->
+    <div class="footer-bottom">
+      <p>&copy; 2025-present TechBlog. All rights reserved.
+        
+          <span class="powered-by"> | Powered by <a href="https://github.com/wng409/myblog-core" target="_blank" rel="noopener">myblog-core</a></span>
+        
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="/js/hm-ui.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
