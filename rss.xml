@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TechBlog</title>
+    <link>https://wng409.github.io/</link>
+    <description>记录我的技术与生活：技术笔记、折腾记录与日常。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 21 Nov 2026 04:09:15 GMT</lastBuildDate>
+    <atom:link href="https://wng409.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>展示我的贪吃蛇</title>
+      <link>https://wng409.github.io/posts/%E5%B1%95%E7%A4%BA%E6%88%91%E7%9A%84%E8%B4%AA%E5%90%83%E8%9B%87.html</link>
+      <guid isPermaLink="true">https://wng409.github.io/posts/%E5%B1%95%E7%A4%BA%E6%88%91%E7%9A%84%E8%B4%AA%E5%90%83%E8%9B%87.html</guid>
+      <pubDate>Sun, 15 Nov 2026 05:17:17 GMT</pubDate>
+      <description>在 GitHub 主页养一条赛博贪吃蛇：这是我的最终成果 缘起：一眼心动的赛博宠物 最近在逛一些极客大佬的主页时，无意间发现他们的 GitHub 贡献图不是静态的绿格子，而是一条像素风的贪吃蛇，在欢快地“吃”着那些代表代码提交的方块。 这个动画简直长在了我的审美点上。既然别人能有，那我也得给自己安排一条！于是，说干就干。 原理：它是怎么活起来的？ 其实这并不复杂，不需要你自己去写复杂的动画代码。它…</description>
+    </item>
+    <item>
+      <title>随笔</title>
+      <link>https://wng409.github.io/posts/%E9%9A%8F%E7%AC%94.html</link>
+      <guid isPermaLink="true">https://wng409.github.io/posts/%E9%9A%8F%E7%AC%94.html</guid>
+      <pubDate>Sun, 01 Nov 2026 03:31:27 GMT</pubDate>
+      <description>不知江月待何人 但见长江送流水 但见长江送流水首先让我想到的是子在川上曰：“逝者如斯夫，不舍昼夜。”长江，见证过先秦河姆渡的籼、江边引水种稻，见证过三国赤壁的江上击战，见证过南宋渡江南迁的软弱，也见证过张若虚月夜漫游赏月作诗。 如图 这让我于武汉长江大桥下漫步时望着这滚滚向东的江水，内心产生了奇妙的共鸣，我与古人见过同一个东西，他们也曾像我这样，站在江边，这么静静地看看江水川流不息，看着光阴照耀。…</description>
+    </item>
+    <item>
+      <title>课前演讲--格物致知</title>
+      <link>https://wng409.github.io/posts/%E8%AF%BE%E5%89%8D%E6%BC%94%E8%AE%B2--%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.html</link>
+      <guid isPermaLink="true">https://wng409.github.io/posts/%E8%AF%BE%E5%89%8D%E6%BC%94%E8%AE%B2--%E6%A0%BC%E7%89%A9%E8%87%B4%E7%9F%A5.html</guid>
+      <pubDate>Sat, 31 Oct 2026 03:14:46 GMT</pubDate>
+      <description>格物，不止一种答案 尊敬的老师，亲爱的同学们： 大家好！ 如果让你盯着一根竹子看七天七夜，你能看出什么？ 王阳明试过。他按朱熹的方法去“格”竹子，七天七夜，一无所获，反而病了一场。竹子没格明白，人先病倒了。一次失败未必能否定朱熹，但它至少逼我们追问：是不是“格物”被理解偏了？格物，是不是本来就不该只有一种答案？ 《大学》有言：“致知在格物，物格而后知至。”这句话本身没错——真知不在空想中诞生，而在…</description>
+    </item>
+    <item>
+      <title>课前演讲--老人与海</title>
+      <link>https://wng409.github.io/posts/%E8%AF%BE%E5%89%8D%E6%BC%94%E8%AE%B2--%E8%80%81%E4%BA%BA%E4%B8%8E%E6%B5%B7.html</link>
+      <guid isPermaLink="true">https://wng409.github.io/posts/%E8%AF%BE%E5%89%8D%E6%BC%94%E8%AE%B2--%E8%80%81%E4%BA%BA%E4%B8%8E%E6%B5%B7.html</guid>
+      <pubDate>Sat, 31 Oct 2026 03:13:25 GMT</pubDate>
+      <description>《老人与海》读书分享 同学们，大家好。今天我想和大家分享海明威的《老人与海》。 故事很简单：古巴老渔夫圣地亚哥连续八十四天没捕到鱼，第八十五天钓到一条巨大的马林鱼，在海上搏斗三天三夜才杀死它。返航途中鲨鱼群不断来袭，等他回到港口，那条大鱼只剩下一副骨架。 很多人会问：他拼了命，到头来什么也没得到，这不就是一个失败的故事吗？这正是这本书最打动我的地方。海明威写了一句很有名的话——“一个人可以被毁灭，…</description>
+    </item>
+    <item>
+      <title>背离与复活</title>
+      <link>https://wng409.github.io/posts/%E8%83%8C%E7%A6%BB%E4%B8%8E%E5%A4%8D%E6%B4%BB.html</link>
+      <guid isPermaLink="true">https://wng409.github.io/posts/%E8%83%8C%E7%A6%BB%E4%B8%8E%E5%A4%8D%E6%B4%BB.html</guid>
+      <pubDate>Fri, 16 Oct 2026 15:24:53 GMT</pubDate>
+      <description>背离与复活 作者：矢凝泽 第一部：背离 一 那年冬天，D在辩论队最后一次发言时说了一句话：“我们要永远站在弱者这边。” 同一年，Z在日记里写：“秩序不是压迫，秩序是保护弱者最后一道防线。” 那时候他们以为自己站在同一边。只是方法不同。D觉得Z太温和，Z觉得D太冒进。但他们都还相信，对方心里装着同样的东西。那些被遗忘的人，那些被驱赶的人，那些在角落里沉默的人。 后来，他们才发现，有些路一旦走上去，就…</description>
+    </item>
+  </channel>
+</rss>
